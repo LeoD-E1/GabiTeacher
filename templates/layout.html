@@ -6,16 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
-
     <!-- Bootstrap -->
     <link type='text/css' rel="stylesheet" href="../public/css/bootstrap.min.css" />
-
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="../public/fontawesome/css/all.css">
-
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="../public/css/style.css" /> {% endblock %}
 
@@ -32,7 +28,7 @@
                 <!-- Logo -->
                 <div class="navbar-brand">
                     <a href="{{ url_for('home') }}">
-                        <img src="../public/img/logo-blanco.png" height="50px">
+                        <img src="../public/img/logo-blanco.png" height="45px">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -52,10 +48,9 @@
                     <li><a href="#">Books</a></li>
                     <!--<li><a href="blog.html">Menu</a></li>-->
                     <li><a href="#">About</a></li>
-                    <!--<li><a href="{{ url_for('contact') }}">Contact</a></li>-->
-                    <li><a><i class="fas fa-search"></i></a></li>
-
-                    <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i></a>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <!--<li><a><i class="fas fa-search"></i></a></li>-->
+                    <li><a href="{{ url_for('login')}}">Log in</a>
                 </ul>
             </nav>
             <!-- /Navigation -->
@@ -79,7 +74,7 @@
                 <div class="col-md-6">
                     <div class="footer-logo">
                         <a href="index.html">
-                            <img src="../public/img/logo-negro.png" height="60px">
+                            <img src="../public/img/logo-negro.png" height="50px">
                         </a>
                     </div>
                 </div>
@@ -93,6 +88,7 @@
                         <!--<li><a href="blog.html">Menu</a></li>-->
                         <li><a href="#">About</a></li>
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="{{ url_for('login')}}">Log in</a>
                     </ul>
                 </div>
                 <!-- /footer nav -->
@@ -116,7 +112,7 @@
                 <!-- copyright -->
                 <div class="col-md-8 col-md-pull-4">
                     <div class="copyright">
-                        Copyright &copy;
+                        Copyright &copy; 2019 -
                         <script>
                             document.write(new Date().getFullYear());
                         </script> GabiTeacher. All rights reserved
