@@ -17,19 +17,20 @@ from six.moves.urllib.parse import urlencode
 
 import constants
 
+
 ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
 
-AUTH0_CALLBACK_URL = env.get(constants.AUTH0_CALLBACK_URL)
-AUTH0_CLIENT_ID = env.get(constants.AUTH0_CLIENT_ID)
-AUTH0_CLIENT_SECRET = env.get(constants.AUTH0_CLIENT_SECRET)
-AUTH0_DOMAIN = env.get(constants.AUTH0_DOMAIN)
+AUTH0_CALLBACK_URL = env.get('AUTH0_CALLBACK_URL')
+AUTH0_CLIENT_ID = env.get('AUTH0_CLIENT_ID')
+AUTH0_CLIENT_SECRET = env.get('AUTH0_CLIENT_SECRET')
+AUTH0_DOMAIN = env.get('AUTH0_DOMAIN')
 AUTH0_BASE_URL = 'https://' + AUTH0_DOMAIN
-AUTH0_AUDIENCE = env.get(constants.AUTH0_AUDIENCE)
+AUTH0_AUDIENCE = env.get('AUTH0_AUDIENCE')
 
 app = Flask(__name__, static_url_path='/public', static_folder='./public')
-app.secret_key = constants.SECRET_KEY
+app.secret_key = env.get('SECRET_KEY')
 app.debug = True
 
 
@@ -58,7 +59,7 @@ auth0 = oauth.register(
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        if constants.PROFILE_KEY not in session:
+        if env.get('PROFILE_KEY') not in session:
             return redirect('/login')
         return f(*args, **kwargs)
 
@@ -90,14 +91,17 @@ def callback_handling():
 def login():
     return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
+
 @app.route('/logout')
 def logout():
     session.clear()
-    params = {'returnTo': url_for('home', _external=True), 'client_id': AUTH0_CLIENT_ID}
+    params = {'returnTo': url_for(
+        'home', _external=True), 'client_id': AUTH0_CLIENT_ID}
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
 
