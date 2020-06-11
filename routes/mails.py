@@ -11,5 +11,3 @@ mails = Blueprint('mails', __name__)
 def sendEmail():
     return SendEmail()
 
-
-global mails
