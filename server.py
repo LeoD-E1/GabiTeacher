@@ -13,6 +13,7 @@ from six.moves.urllib.parse import urlencode
 
 from commons.env import env
 from routes.page import page
+from routes.mails import mails
 from routes.auth import auth
 
 AUTH0_CALLBACK_URL = env.get('AUTH0_CALLBACK_URL')
@@ -24,9 +25,9 @@ AUTH0_AUDIENCE = env.get('AUTH0_AUDIENCE')
 
 app = Flask(__name__, static_url_path='/public', static_folder='./public')
 app.register_blueprint(page)
+app.register_blueprint(mails)
 app.secret_key = env.get('SECRET_KEY')
 app.debug = True
-
 
 @app.errorhandler(Exception)
 def handle_auth_error(ex):
