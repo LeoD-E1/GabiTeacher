@@ -22,7 +22,6 @@ AUTH0_DOMAIN = env.get('AUTH0_DOMAIN')
 AUTH0_BASE_URL = 'https://' + AUTH0_DOMAIN
 AUTH0_AUDIENCE = env.get('AUTH0_AUDIENCE')
 
-
 app = Flask(__name__, static_url_path='/public', static_folder='./public')
 app.register_blueprint(page)
 app.secret_key = env.get('SECRET_KEY')
