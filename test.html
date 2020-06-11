@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<body>
+<script>
+var a = document.createElement('a');
+//alert(a.download === ''); // If true, this seems to indicate support
+a.setAttribute('download', 'test.xls');
+a.href = 'https://docs.google.com/spreadsheets/u/0/d/17HTKKhOqdCeDMWSbCL-ij7gJlSMW9FII-OUF2qIpF7Y/export?format=xlsx';
+a.innerHTML = 'testing';
+a.style.display = 'none';
+document.body.appendChild(a);
+a.click();
+</script>
