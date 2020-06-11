@@ -23,4 +23,3 @@ def dashboard():
                            userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
 
 
-global page
