@@ -1,1 +1,1 @@
-This is a application for learn english named gabiteacher project
+This is an application for learning english, it's named GabiTeacher project
