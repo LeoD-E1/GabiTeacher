@@ -41,6 +41,7 @@ jsonschema==2.6.0
 keyring==10.6.0
 keyrings.alt==3.0
 MarkupSafe==1.1.1
+marshmallow==2.21.0
 pathlib2==2.3.5
 pathspec==0.5.9
 pycparser==2.20
