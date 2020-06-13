@@ -1,33 +1,30 @@
 """Python Flask WebApp Auth0 integration example
 """
+from flask import Flask, jsonify, redirect
+from flask import session, url_for
+
 import json
 from werkzeug.exceptions import HTTPException
-
-from flask import Flask
-from flask import jsonify
-from flask import redirect
-from flask import session
-from flask import url_for
 from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 
-from commons.env import env
-from routes.page import page
-from routes.mails import mails
-from routes.auth import auth
+from api.commons.env import env
+from api.routes.page import page
+from api.routes.mails import mails
 
-AUTH0_CALLBACK_URL = env.get('AUTH0_CALLBACK_URL')
-AUTH0_CLIENT_ID = env.get('AUTH0_CLIENT_ID')
-AUTH0_CLIENT_SECRET = env.get('AUTH0_CLIENT_SECRET')
-AUTH0_DOMAIN = env.get('AUTH0_DOMAIN')
-AUTH0_BASE_URL = 'https://' + AUTH0_DOMAIN
-AUTH0_AUDIENCE = env.get('AUTH0_AUDIENCE')
+callback_url = env.get('AUTH0_CALLBACK_URL')
+client_id = env.get('AUTH0_CLIENT_ID')
+client_secret = env.get('AUTH0_CLIENT_SECRET')
+domain = env.get('AUTH0_DOMAIN')
+base_url = 'https://' + domain
+audience = env.get('AUTH0_AUDIENCE')
 
 app = Flask(__name__, static_url_path='/public', static_folder='./public')
 app.register_blueprint(page)
 app.register_blueprint(mails)
 app.secret_key = env.get('SECRET_KEY')
 app.debug = True
+
 
 @app.errorhandler(Exception)
 def handle_auth_error(ex):
@@ -40,11 +37,11 @@ oauth = OAuth(app)
 
 auth0 = oauth.register(
     'auth0',
-    client_id=AUTH0_CLIENT_ID,
-    client_secret=AUTH0_CLIENT_SECRET,
-    api_base_url=AUTH0_BASE_URL,
-    access_token_url=AUTH0_BASE_URL + '/oauth/token',
-    authorize_url=AUTH0_BASE_URL + '/authorize',
+    client_id=client_id,
+    client_secret=client_secret,
+    api_base_url=base_url,
+    access_token_url=base_url + '/oauth/token',
+    authorize_url=base_url + '/authorize',
     client_kwargs={
         'scope': 'openid profile email',
     },
@@ -68,14 +65,14 @@ def callback_handling():
 
 @app.route('/login')
 def login():
-    return auth0.authorize_redirect(redirect_uri=AUTH0_CALLBACK_URL, audience=AUTH0_AUDIENCE)
+    return auth0.authorize_redirect(redirect_uri=callback_url, audience=audience)
 
 
 @app.route('/logout')
 def logout():
     session.clear()
     params = {'returnTo': url_for(
-        'page.home', _external=True), 'client_id': AUTH0_CLIENT_ID}
+        'page.home', _external=True), 'client_id': client_id}
     print('logout', params)
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 
