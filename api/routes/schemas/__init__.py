@@ -1,8 +1,8 @@
 from functools import wraps
 from importlib import import_module
-from cerberus import Validator as check
+from cerberus import Validator as get_check
 from os.path import dirname, basename, isfile, join
-from flask import request
+from flask import request, jsonify
 from json import dumps
 import glob
 
@@ -15,6 +15,7 @@ def get_handler(schema, name, route):
         'headers': 'headers' in schema and schema['headers'] or {},
         'params': 'params' in schema and schema['params'] or {},
     }
+    check = get_check(struct)
 
     @wraps(route)
     def handler():
@@ -26,8 +27,23 @@ def get_handler(schema, name, route):
             headers[key] = request.headers.values()[i]
         to_check = {'body': body, 'headers': headers, 'params': params}
         custom = True if 'custom' not in schema else schema['custom'](
-            body, headers)
-        return route() if custom and check(struct)(to_check) else 'Pusiste cualquier cosa flaco'
+            body, headers, params)
+        if custom != True:
+            response = jsonify({'message': 'Request Error', 'errors': custom})
+            response.status_code = 400
+            return response
+        if check(to_check) == False:
+            response = jsonify(
+                {'message': 'Request Error', 'errors': check.errors})
+            response.status_code = 400
+            return response
+        result = route()
+        if type(result) != dict:
+            return result
+
+        response = jsonify(result['body'])
+        response.status_code = result['status']
+        return response
     return handler
 
 
