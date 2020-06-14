@@ -9,8 +9,7 @@ from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
 
 from api.commons.env import env
-from api.routes.page import page
-from api.routes.mails import mails
+from api.routes.schemas import define_routes
 
 callback_url = env.get('AUTH0_CALLBACK_URL')
 client_id = env.get('AUTH0_CLIENT_ID')
@@ -20,8 +19,7 @@ base_url = 'https://' + domain
 audience = env.get('AUTH0_AUDIENCE')
 
 app = Flask(__name__, static_url_path='/public', static_folder='./public')
-app.register_blueprint(page)
-app.register_blueprint(mails)
+define_routes(app)
 app.secret_key = env.get('SECRET_KEY')
 app.debug = True
 
@@ -72,7 +70,7 @@ def login():
 def logout():
     session.clear()
     params = {'returnTo': url_for(
-        'page.home', _external=True), 'client_id': client_id}
+        'home', _external=True), 'client_id': client_id}
     print('logout', params)
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 

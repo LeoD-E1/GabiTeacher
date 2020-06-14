@@ -1,21 +1,16 @@
-from flask import render_template, Blueprint, session
+from flask import render_template, session
 import json
 from api.routes.auth import auth
 
-page = Blueprint('page', __name__)
 
-
-@page.route('/contact')
 def contact():
     return render_template('contact.html')
 
 
-@page.route('/')
 def home():
     return render_template('index.html')
 
 
-@page.route('/dashboard')
 @auth
 def dashboard():
     return render_template('profile-user.html',

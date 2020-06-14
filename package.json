@@ -1,5 +1,7 @@
 {
   "scripts": {
-    "start": "python server.py"
+    "start": "python server.py",
+    "dev": "python server.py",
+    "freeze": "pip freeze > requirements.txt"
   }
 }
