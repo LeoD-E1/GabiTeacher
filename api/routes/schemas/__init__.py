@@ -1,11 +1,9 @@
 from functools import wraps
 from importlib import import_module
 from cerberus import Validator as get_check
-from os.path import dirname, basename, isfile, join
+from os.path import dirname, isfile, join
 from flask import request, jsonify
-from json import dumps
 import glob
-
 modules = glob.glob(join(dirname(__file__), "*.py"))
 
 
@@ -16,6 +14,7 @@ def get_handler(schema, name, route):
         'params': 'params' in schema and {'schema': schema['params']} or {},
     }
     check = get_check(struct)
+    check({})  # Saves time on the first call
 
     @wraps(route)
     def handler():
