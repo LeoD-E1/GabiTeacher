@@ -11,9 +11,9 @@ modules = glob.glob(join(dirname(__file__), "*.py"))
 
 def get_handler(schema, name, route):
     struct = {
-        'body': 'body' in schema and schema['body'] or {},
-        'headers': 'headers' in schema and schema['headers'] or {},
-        'params': 'params' in schema and schema['params'] or {},
+        'body': 'body' in schema and {'schema': schema['body']} or {},
+        'headers': 'headers' in schema and {'schema': schema['headers']} or {},
+        'params': 'params' in schema and {'schema': schema['params']} or {},
     }
     check = get_check(struct)
 
@@ -25,19 +25,19 @@ def get_handler(schema, name, route):
         headers = {}
         for i, key in enumerate(request.headers.keys()):
             headers[key] = request.headers.values()[i]
-        to_check = {'body': body, 'headers': headers, 'params': params}
+        incoming = {'body': body, 'headers': headers, 'params': params}
         custom = True if 'custom' not in schema else schema['custom'](
             body, headers, params)
         if custom != True:
             response = jsonify({'message': 'Request Error', 'errors': custom})
             response.status_code = 400
             return response
-        if check(to_check) == False:
+        if check(incoming) == False:
             response = jsonify(
                 {'message': 'Request Error', 'errors': check.errors})
             response.status_code = 400
             return response
-        result = route()
+        result = route(incoming)
         if type(result) != dict:
             return result
 

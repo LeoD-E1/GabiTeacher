@@ -3,16 +3,16 @@ import json
 from api.routes.auth import auth
 
 
-def contact():
+def contact(req):
     return render_template('contact.html')
 
 
-def home():
+def home(req):
     return render_template('index.html')
 
 
 @auth
-def dashboard():
+def dashboard(req):
     return render_template('profile-user.html',
                            userinfo=session['profile'],
                            userinfo_pretty=json.dumps(session['jwt_payload'], indent=4))
