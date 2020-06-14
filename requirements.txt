@@ -28,7 +28,7 @@ enum34==1.1.10
 filelock==3.0.12
 Flask==1.1.2
 Flask-PyMongo==2.3.0
-functools32==3.2.3.post2
+# functools32==3.2.3.post2
 future==0.16.0
 gunicorn==19.10.0
 idna==2.7
