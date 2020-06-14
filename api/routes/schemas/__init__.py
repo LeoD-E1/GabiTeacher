@@ -19,12 +19,11 @@ def get_handler(schema, name, route):
 
     @wraps(route)
     def handler():
-        params = request.args.to_dict()
-        body = request.get_json()
+        params, body = request.args.to_dict(), request.get_json()
         body = body if body else request.form.to_dict()
-        headers = {}
-        for i, key in enumerate(request.headers.keys()):
-            headers[key] = request.headers.values()[i]
+        headers, values = {}, request.headers.values()
+        for key in request.headers.keys():
+            headers[key] = values.__next__()
         incoming = {'body': body, 'headers': headers, 'params': params}
         custom = True if 'custom' not in schema else schema['custom'](
             body, headers, params)
