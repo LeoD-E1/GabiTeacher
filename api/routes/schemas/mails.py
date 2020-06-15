@@ -3,10 +3,10 @@ schema = {
         'paths': '/api/mail',
         'methods': ['POST'],
         'body': {
-            'to': {'required': True},
-            'subject': {'required': True},
-            'html': {'required': True},
-            'text': {'required': True}
+            'to': {'required': True, 'type': ['string', 'list']},
+            'subject': {'required': True, 'type': 'string'},
+            'html': {'required': True, 'type': 'string'},
+            'text': {'required': True, 'type': 'string'}
         }
     }
 }

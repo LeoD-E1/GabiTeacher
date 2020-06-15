@@ -1,4 +1,4 @@
-"""Python Flask WebApp Auth0 integration example
+"""GabiTeacher App
 """
 from flask import Flask, jsonify, redirect
 from flask import session, url_for

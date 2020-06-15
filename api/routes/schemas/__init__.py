@@ -1,10 +1,11 @@
 from functools import wraps
 from importlib import import_module
 from cerberus import Validator as get_check
-from os.path import dirname, isfile, join
+from os.path import dirname, isfile, join, basename
 from flask import request, jsonify
-import glob
-modules = glob.glob(join(dirname(__file__), "*.py"))
+from glob import glob
+
+modules = glob(join(dirname(__file__), "*.py"))
 
 
 def get_handler(schema, name, route):
@@ -48,9 +49,7 @@ def get_handler(schema, name, route):
 def define_routes(app):
     for file in modules:
         if isfile(file) and not file.endswith('__init__.py'):
-            key = file.split('/')
-            key = key[-1]
-            key = key[:-3]
+            key = basename(file)[:-3]
             schema = import_module('api.routes.schemas.' + key).schema
             for name in schema.keys():
                 if 'paths' not in schema[name]:
