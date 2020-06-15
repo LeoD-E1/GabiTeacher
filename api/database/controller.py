@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_pymongo import PyMongo
 
-from commons.env import env
+from api.commons.env import env
 
 app = Flask(__name__)
 app.config["MONGO_URI"] = env.get('MONGODB_URI') + '?retryWrites=false'
