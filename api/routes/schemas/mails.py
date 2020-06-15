@@ -1,6 +1,6 @@
 schema = {
     'send_email': {
-        'paths': '/mail',
+        'paths': '/api/mail',
         'methods': ['POST'],
         'body': {
             'to': {'required': True},
