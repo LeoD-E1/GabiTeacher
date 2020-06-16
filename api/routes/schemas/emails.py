@@ -1,6 +1,6 @@
 schema = {
     'send_email': {
-        'paths': '/api/mail',
+        'paths': '/api/email',
         'methods': ['POST'],
         'body': {
             'to': {'required': True, 'type': ['string', 'list']},
@@ -10,7 +10,7 @@ schema = {
         }
     },
     'send_email_template': {
-        'paths': '/api/mail/<template_name>',
+        'paths': '/api/email/<template_name>',
         'methods': ['POST'],
         'body': {
             'to': {'required': True, 'type': ['string', 'list']},
@@ -19,6 +19,14 @@ schema = {
         },
         'params': {
             'template_name': {'required': True, 'type': 'string'}
+        }
+    },
+    'preview_email_template': {
+        'paths': '/api/email/<template_name>/preview/<view>',
+        'methods': ['GET'],
+        'params': {
+            'template_name': {'required': True, 'type': 'string'},
+            'view': {'required': True, 'allowed': ['html', 'text']}
         }
     }
 }
