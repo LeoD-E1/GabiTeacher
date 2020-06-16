@@ -12,21 +12,22 @@ def get_handler(schema, name, route):
     struct = {
         'body': 'body' in schema and {'schema': schema['body']} or {},
         'headers': 'headers' in schema and {'schema': schema['headers']} or {},
-        'params': 'params' in schema and {'schema': schema['params']} or {},
+        'query': 'query' in schema and {'schema': schema['query']} or {},
+        'params': 'params' in schema and {'schema': schema['params']} or {}
     }
     check = get_check(struct)
     check({})  # Saves time on the first call
 
     @wraps(route)
-    def handler():
-        params, body = request.args.to_dict(), request.get_json()
+    def handler(**params):
+        query, body = request.args.to_dict(), request.get_json()
         body = body if body else request.form.to_dict()
         headers, values = {}, request.headers.values()
         for key in request.headers.keys():
             headers[key] = values.__next__()
-        incoming = {'body': body, 'headers': headers, 'params': params}
-        custom = True if 'custom' not in schema else schema['custom'](
-            body, headers, params)
+        incoming = {'body': body, 'headers': headers,
+                    'query': query, 'params': params}
+        custom = True if 'custom' not in schema else schema['custom'](incoming)
         if custom != True:
             response = jsonify({'message': 'Request Error', 'errors': custom})
             response.status_code = 400
