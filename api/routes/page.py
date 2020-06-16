@@ -11,6 +11,8 @@ def contact(req):
 def home(req):
     return render_template('index.html')
 
+def get_started(req):
+    return render_template('get_started.html')
 
 @auth
 def dashboard(req):
