@@ -4,6 +4,7 @@ from cerberus import Validator as get_check
 from os.path import dirname, isfile, join, basename
 from flask import request, jsonify
 from glob import glob
+import json
 
 modules = glob(join(dirname(__file__), "*.py"))
 
@@ -22,6 +23,7 @@ def get_handler(schema, name, route):
     def handler(**params):
         query, body = request.args.to_dict(), request.get_json()
         body = body if body else request.form.to_dict()
+        body = json.loads(body) if type(body) == str else body
         headers, values = {}, request.headers.values()
         for key in request.headers.keys():
             headers[key] = values.__next__()

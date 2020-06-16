@@ -4,8 +4,9 @@ window.request = ({ url, method = "get", body = {} }) =>
     body = ["get", "head"].includes(method.toLowerCase())
       ? undefined
       : JSON.stringify(body);
+    const headers = { "Content-Type": "application/json" };
 
-    fetch(new Request(url, { method }))
+    fetch(new Request(url, { method, body, headers }))
       .then(async (Res) => {
         const Res2 = Res.clone();
         const json = await new Promise((resolveJson) =>
