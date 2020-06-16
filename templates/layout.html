@@ -49,8 +49,7 @@
                     <!--<li><a href="blog.html">Menu</a></li>-->
                     <li><a href="#">About</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <!--<li><a><i class="fas fa-search"></i></a></li>-->
-                    <li><a href="{{ url_for('login')}}">Log in</a>
+                    <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
                 </ul>
             </nav>
             <!-- /Navigation -->
@@ -88,7 +87,7 @@
                         <!--<li><a href="blog.html">Menu</a></li>-->
                         <li><a href="#">About</a></li>
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('login')}}">Log in</a>
+                        <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
                     </ul>
                 </div>
                 <!-- /footer nav -->
@@ -129,12 +128,6 @@
     </footer>
     <!-- /Footer -->
     {% endblock %}
-
-    <!-- preloader -->
-    <div id='preloader'>
-        <div class='preloader'></div>
-    </div>
-    <!-- /preloader -->
 
     <!-- jQuery Plugins -->
     <script type="text/javascript" src="../public/js/jquery.min.js"></script>
