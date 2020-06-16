@@ -5,18 +5,28 @@
       rel="stylesheet"
     />
     <style>
-      body {
+      .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 0 15px 4px;
         background-color: #def;
-        font-family: "MuseoModerno", cursive;
+        margin: 0px;
+        padding: 8px;
+        overflow-x: hidden;
       }
       .subtitle {
+        font-family: "MuseoModerno", cursive;
         display: inline;
         text-shadow: 0 0 8px;
+        font-weight: bold;
       }
       .content-text {
+        font-family: "MuseoModerno", cursive;
         display: inline;
       }
       .content-message {
+        font-family: "MuseoModerno", cursive;
         width: 80%;
         height: fit-content;
         background-color: #ff6700;
@@ -26,15 +36,16 @@
     </style>
   </head>
   <body>
-    <p>Una persona se quiere contactar...</p>
-    <p class="subtitle">Nombre:&nbsp;</p>
-    <p class="content-text">{{ data.name }}</p>
-    <br />
-    <p class="subtitle">Email:&nbsp;</p>
-    <p class="content-text">{{ data.email }}</p>
-    <br />
-    <p class="subtitle">Mensaje:&nbsp;</p>
-    <p class="content-message">{{ data.message }}</p>
-    <br />
+    <div class="container">
+      <p>Una persona se quiere contactar...</p>
+      <p class="subtitle">Nombre:&nbsp;</p>
+      <p class="content-text">{{ data.name }}</p>
+      <br />
+      <p class="subtitle">Email:&nbsp;</p>
+      <p class="content-text">{{ data.email }}</p>
+      <br />
+      <p class="subtitle">Mensaje:</p>
+      <p class="content-message">{{ data.message|safe }}</p>
+    </div>
   </body>
 </html>
