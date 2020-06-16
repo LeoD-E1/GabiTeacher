@@ -1,5 +1,6 @@
 preview_data = {
     'name': 'Leandro',
     'email': 'leandro.cotti@widergy.com',
-    'message': 'Hola, Test -testtesttesttest'
+    'subject': 'TestSubject',
+    'message': 'Hola, Test -testtesttesttest\ntest'
 }

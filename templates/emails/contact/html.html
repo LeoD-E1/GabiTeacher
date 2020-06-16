@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #def;
+        font-family: "MuseoModerno", cursive;
+      }
+      .subtitle {
+        display: inline;
+        text-shadow: 0 0 8px;
+      }
+      .content-text {
+        display: inline;
+      }
+      .content-message {
+        width: 80%;
+        height: fit-content;
+        background-color: #ff6700;
+        border-radius: 15px;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Una persona se quiere contactar...</p>
+    <p class="subtitle">Nombre:&nbsp;</p>
+    <p class="content-text">{{ data.name }}</p>
+    <br />
+    <p class="subtitle">Email:&nbsp;</p>
+    <p class="content-text">{{ data.email }}</p>
+    <br />
+    <p class="subtitle">Mensaje:&nbsp;</p>
+    <p class="content-message">{{ data.message }}</p>
+    <br />
+  </body>
+</html>
