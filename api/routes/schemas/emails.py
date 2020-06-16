@@ -1,3 +1,5 @@
+from constants import EMAIL_REGEX
+
 schema = {
     'send_email': {
         'paths': '/api/email',
@@ -13,7 +15,8 @@ schema = {
         'paths': '/api/email/<template_name>',
         'methods': ['POST'],
         'body': {
-            'to': {'required': True, 'type': ['string', 'list']},
+            'from': {'type': 'string', 'regex': EMAIL_REGEX},
+            'to': {'required': True, 'type': ['string', 'list'], 'regex': EMAIL_REGEX},
             'subject': {'required': True, 'type': 'string'},
             'data': {'required': True, 'type': 'dict'}
         },
