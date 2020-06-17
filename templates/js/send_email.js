@@ -11,8 +11,10 @@
   window.send_email = async () => {
     if (sent) return;
     sent = true;
-    console.log("send_email");
+    console.log("Sending email...");
     const body = {
+      from_email: email.value,
+      from_name: name.value,
       to: "{{ contact_emails }}".split(","),
       subject: `Contacto: ${subject.value}`,
       data: {

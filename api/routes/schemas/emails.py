@@ -5,6 +5,8 @@ schema = {
         'paths': '/api/email',
         'methods': ['POST'],
         'body': {
+            'from_email': {'type': 'string', 'regex': EMAIL_REGEX},
+            'from_name': {'type': 'string'},
             'to': {'required': True, 'type': ['string', 'list']},
             'subject': {'required': True, 'type': 'string'},
             'html': {'required': True, 'type': 'string'},
@@ -15,7 +17,8 @@ schema = {
         'paths': '/api/email/<template_name>',
         'methods': ['POST'],
         'body': {
-            'from': {'type': 'string', 'regex': EMAIL_REGEX},
+            'from_email': {'type': 'string', 'regex': EMAIL_REGEX},
+            'from_name': {'type': 'string'},
             'to': {'required': True, 'type': ['string', 'list'], 'regex': EMAIL_REGEX},
             'subject': {'required': True, 'type': 'string'},
             'data': {'required': True, 'type': 'dict'}

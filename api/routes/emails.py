@@ -6,6 +6,10 @@ from importlib import import_module
 
 from api.commons.emails import send
 from api.commons.root_dir import root_dir
+from api.commons.env import env
+
+_domain = env.get('MAILGUN_DOMAIN')
+_user = env.get('MAIL_USER')
 
 _templates_namespace = 'templates.emails'
 _templates_path = root_dir + '/' + '/'.join(_templates_namespace.split('.'))
@@ -26,14 +30,24 @@ for tdir in _template_dirs:
     templates[name] = template
 
 
+def _get_email(body):
+    from_email = f'{_user}@{_domain}'
+    if 'from_email' in body:
+        if 'from_name' in body:
+            from_email = f"{body['from_name']} <{body['from_email']}>"
+        else:
+            from_email = body['from_email']
+    return from_email
+
+
 def send_email(req):
     to = req['body']['to']
     to = [to] if type(to) == str else to
     subject = req['body']['subject']
     text = req['body']['text']
     html = req['body']['html']
-    result = send(to, subject, text, html)
-    return {'status': 200, 'body': result}
+    from_email = _get_email(req['body'])
+    return send(from_email, to, subject, text, html)
 
 
 def send_email_template(req):
@@ -50,8 +64,8 @@ def send_email_template(req):
         return {'status': 400, 'body': {'message': f"Invalid Data for template '{name}'", 'errors': check.errors}}
     html = render_template(template['html_path'], data=data)
     text = render_template(template['text_path'], data=data)
-    result = send(to, subject, text, html)
-    return {'status': 200, 'body': result}
+    from_email = _get_email(req['body'])
+    return send(from_email, to, subject, text, html)
 
 
 def preview_email_template(req):
