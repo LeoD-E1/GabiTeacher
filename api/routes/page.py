@@ -1,4 +1,4 @@
-from flask import render_template, session
+from flask import render_template, session, send_file
 import json
 from api.routes.auth import auth
 from api.commons.env import env
@@ -6,6 +6,9 @@ from api.commons.env import env
 
 def contact(req):
     return render_template('contact.html', contact_emails=env.get('CONTACT_EMAILS'))
+
+def favicon(req):
+    return send_file('public/img/favicon.png')
 
 
 def home(req):
