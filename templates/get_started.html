@@ -1,16 +1,14 @@
-{% extends 'layout.html' %}{% block title %} Get Started in english {% endblock %}{% block content %}
-<div class="container-video" style="bottom: 0; top: 0; max-width: 100%; max-height: 700px;">
-    <video autoplay muted loop id="myVideo" style="max-width:100%; max-height:100%;">
-        <source src="https://doc-0o-9s-docs.googleusercontent.com/docs/securesc/a9vjs9i6h10djo6as517jd2g8s2gns8f/u0o00t29mta3hq7rpn3gr0g9pspp7u5a/1592421750000/06149111331260355944/06149111331260355944/1dvK8uH4Ne0M9W1wPyx7PgWOaY4ebDZ7Y?e=download&authuser=4&nonce=ld711jdqp6dfc&user=06149111331260355944&hash=em2f4j8vo95vpbrmrh5sgkt4nicpkuhh" type="video/mp4">  
+{% extends 'layout.html' %} {% block title %} Get Started in english {% endblock %} {% block css%}
+<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/get-started.css')}}" /> {% endblock%} {% block content %}
+<div class="container-video">
+    <video autoplay muted loop id="introduction-video">
+        <source src="../public/video/online-class.mp4" type="video/mp4">  
     </video>
 </div>
-<div class="up-video" style="position: absolute;
-                            bottom: 0;
-                            top: 0;
-                            background: rgba(0, 0, 0, 0.5);
-                            color: #f1f1f1;
-                            width: 100%;
-                            padding: 100px;">
-    <a class="main-button icon-button" href="{{url_for('get_started')}}">Show me how</a>
+<div class="up-video">
+    <div class="container">
+        <h1 class="white-text">How to start with idiom english?</h1>
+        <a class="main-button icon-button" href="{{url_for('get_started')}}">Show me how</a>
+    </div>
 </div>
 {% endblock %}

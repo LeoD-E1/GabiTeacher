@@ -1,0 +1,20 @@
+.container-video {
+    bottom: 0;
+    top: 0;
+    max-width: 100%;
+    max-height: 700px;
+}
+
+#introduction-video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.up-video {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+}
