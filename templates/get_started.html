@@ -1,14 +1,46 @@
-{% extends 'layout.html' %} {% block title %} Get Started in english {% endblock %} {% block css%}
-<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/get-started.css')}}" /> {% endblock%} {% block content %}
-<div class="container-video">
-    <video autoplay muted loop id="introduction-video">
+{% extends 'layout.html' %}
+<!-------------------------------->
+{% block title %} Get Started in english language{% endblock %}
+<!-------------------------------->
+{% block css %}
+<link type="text/css" rel="stylesheet" href="../public/css/get-started.css" />{% endblock %}
+<!-------------------------------->
+{% block content %}
+
+<div class="delimeter">
+    <div class="container-video">
+
+        <video autoplay muted loop id="introduction-video">
+            <source src="../public/video/online-class.mp4" type="video/mp4">  
+        </video>
+
+        <div class="up-video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <h1 class="white-text">How to start with english language?</h1>
+                        <p class="lead white-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quasi eum, autem ratione aspernatur blanditiis recusandae pariatur. Error ut sed soluta iste a consequatur? A delectus odit iure ipsum quae.</p>
+                        <a class="main-button icon-button" onclick="showVideo()" style="cursor: pointer;"> Show me how</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="before-heading">
+    <video autoplay muted loop id="popupVideo" class="introduction-video" style="display: none;">
         <source src="../public/video/online-class.mp4" type="video/mp4">  
     </video>
 </div>
-<div class="up-video">
-    <div class="container">
-        <h1 class="white-text">How to start with idiom english?</h1>
-        <a class="main-button icon-button" href="{{url_for('get_started')}}">Show me how</a>
-    </div>
-</div>
+
+
+<script>
+    function showVideo() {
+        video = document.getElementById('popupVideo')
+        video.style.display = 'block';
+    }
+</script>
 {% endblock %}

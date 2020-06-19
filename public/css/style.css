@@ -97,10 +97,6 @@ blockquote:before {
     border-color: #EBEBEB;
 }
 
-.section-header {
-    margin-bottom: 40px;
-}
-
 
 /* --- Background Image --- */
 
@@ -152,17 +148,9 @@ blockquote:before {
     color: #FF6700;
 }
 
-.main-button.icon-button:hover,
-.main-button.icon-button:focus {
-    padding-right: 45px;
-}
-
 .main-button.icon-button:after {
-    content: "\f061";
     font-family: FontAwesome;
     position: absolute;
-    width: 30px;
-    right: 15px;
     text-align: center;
     opacity: 0;
     -webkit-transition: 0.2s all;
@@ -1263,7 +1251,7 @@ textarea:focus {
     .section-header h2 {
         font-size: 24px;
     }
-    /*-- Why us --*/
+    /*-- Why gabiteacher --*/
     #why-us .feature {
         margin-top: 40px;
     }
