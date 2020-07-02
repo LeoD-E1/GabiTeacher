@@ -17,7 +17,7 @@ def home(req):
 def get_started(req):
     return render_template('get_started.html')
 
-def gramma(req):
+def grammar(req):
     return render_template('grammar.html')
 
 def simple_present(req):
