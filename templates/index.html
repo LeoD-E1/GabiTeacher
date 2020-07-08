@@ -4,29 +4,23 @@
 {% block title %}GabiTeacher - Free Online Training of English{% endblock %}
 <!--/Title-->
 
-{% block content %}
 
 <!-- Home -->
-<div id="home" class="hero-area">
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"></div>
-    <!-- /Backgound Image -->
+{% block BgImage %}
+style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
+{% endblock %} 
 
-    <div class="home-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="white-text">The Online School to learn English</h1>
-                    <p class="lead white-text">Education to learn english dedicated to people<br> that want learn since cero </p>
-                    <a class="main-button icon-button" href="{{url_for('get_started')}}">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </div>
+{% block BgImageTitle %}
+<div class="col-md-12">
+    <h1 class="white-text">The Online School to learn English</h1>
+    <p class="lead white-text">Education to learn english dedicated to people<br> that want learn since cero </p>
+    <a class="main-button icon-button" href="{{url_for('get_started')}}">Get Started!</a>
 </div>
+{% endblock %}
+
 
 <!-- /Home -->
-
+{% block content %}
 <!-- About -->
 <div id="about" class="section">
 

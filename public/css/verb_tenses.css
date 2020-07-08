@@ -1,3 +1,12 @@
+body{
+    font-size: 13px;
+    color: #333;
+}
+.description{
+    font-size: 15px;
+    color: #000000;
+    font-weight: 500;
+}
 .box-title {
     text-align: center;
     background-color: rosybrown;
