@@ -26,11 +26,11 @@ body{
     text-align: center;
 }
 .subject-box{
-    background-color: darkorange;
+    background-color: transparent;
 }
 .description-box{
-    background-color: darkkhaki ;
+    background-color: transparent;
 }
 .structure-box{
-    background-color: darkred;
+    background-color: transparent;
 }
