@@ -28,36 +28,40 @@ style="background-image:url('../public/img/simple-present.jpg');"
 
     <div class="row">
 
-      <div class="col-md-3">
-          <ul>
-            <li><h5>You speak English</h5></li>
-            <li><h5>Do you speak English ?</h5></li>
-            <li><h5>You Do not speak English</h5></li>
-          </ul>
-      </div>
+      <div class="col-md-12">
 
-      <div class="col-md-6">
-        <div class="description-box">
+        <div class="description-box text-center">
           <p class="description"><b>The structure of a simple present sentence is very easy to understand:</b></p>
         </div>
 
-        <div class="structure-box text center">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"><h4>Subject</h4> </th>
-                <th scope="col"><h4><i class="fas fa-plus"></i></h4></th>
-                <th scope="col"> <h4>Verb Infinitive</h4> </th>
-                <th scope="col"><h4><i class="fas fa-plus"></i></h4></th>
-                <th scope="col"> <h4>Complement</h4> </th>
-              </tr>
-            </thead>
-          </table>
-        </div><br>
+        <div class="example-box">
+          <div class="affirmative-box">
+            <h3>Affirmative</h3>
+            <ul>
+              <li><h5>You speak in English</h5></li>
+              <li><h5>I play football</h5></li>
+              <li><h5>We drink Coca Cola everyday </h5></li>
+            </ul>
+          </div>
+          <div class="interrogative-box">
+            <h3> Interrogative</h3>
+            <ul>
+              <li><h5> Do You speak in English?</h5></li>
+              <li><h5> Do I play football?</h5></li>
+              <li><h5> Does We drink Coca Cola everyday? </h5></li>
+            </ul>
+          </div>
+          <div class="negative-box">
+            <h3>Negative</h3>
+            <ul>
+              <li><h5>You do not speak in English</h5></li>
+              <li><h5>I do not play football</h5></li>
+              <li><h5>We do not drink Coca Cola everyday </h5></li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-3"></div>
-    </div>
+    </div><br>
 
     <div class="row">
       <div class="col-md-3 subject-box">
@@ -113,6 +117,8 @@ style="background-image:url('../public/img/simple-present.jpg');"
 
       <div class="col-md-6">
 
+        {% include 'components/structure-box.html' %}
+        
         <div class="description-box">
           <h3>Verb Infinitive</h3>
           <p class="description"><b>In both English and Spanish, verbs indicate the action performed by the subject, and although English actually has many verbs that can sometimes also act as nouns or as a complement to other verbs, this means that memorizing them is a bit complex, since depending on the context, they can have one meaning or another.</b></p>

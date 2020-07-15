@@ -3,11 +3,47 @@ body{
     color: #333;
 }
 
+.title {
+    font-family: 'Galada', cursive;
+    font-size: 55px;
+    color: #FFF;
+}
+
+
 .subtitle{
+    text-align: center;
     color: #FFF;
     font-size: 23px;
     font-weight: bold;
 }
+
+.example-box{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    border: solid 0.5px #EBEBED;
+}
+
+.affirmative-box{
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-right: solid 0.5px #EBEBED;
+}
+
+.interrogative-box{
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.negative-box{
+    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    border-left: solid 0.5px #EBEBED;
+}
+
 
 .description{
     font-size: 15px;
@@ -19,10 +55,6 @@ body{
     background-color: rosybrown;
 }
 
-.title {
-    font-size: 55px;
-    color: #FFF;
-}
 
 .transparence {
     background-color: rgb(0, 0, 0);
