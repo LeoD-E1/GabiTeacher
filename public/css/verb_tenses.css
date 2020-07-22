@@ -9,38 +9,43 @@ body{
     color: #FFF;
 }
 
-
 .subtitle{
     text-align: center;
     color: #FFF;
     font-size: 23px;
-    font-weight: bold;
 }
 
 .example-box{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     width: 100%;
     border: solid 0.5px #EBEBED;
 }
 
-.affirmative-box{
+.subject-box{
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 2;
     border-right: solid 0.5px #EBEBED;
 }
 
-.interrogative-box{
+.affirmative-box{
     text-align: center;
     grid-column-start: 2;
     grid-column-end: 3;
+    border-right: solid 0.5px #EBEBED;
+}
+
+.interrogative-box{
+    text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 .negative-box{
     text-align: center;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
     border-left: solid 0.5px #EBEBED;
 }
 
