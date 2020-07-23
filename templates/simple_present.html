@@ -8,12 +8,15 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
 
 <div class="col-md-3"></div>
 <div class="col-md-6">
-  <h1 class="title">Simple Present</h1>
+  <h1 class="title">Presente Simple</h1>
   <br /><br />
 
   <div class="col-md-12">
     <p class="subtitle">
-      <b>By speaking in the present, we are talking about something that is happening right now, habits, repetitions and sequences.</b>
+      <b
+        >Al hablar en presente, estamos hablando de algo que está sucediendo en
+        este momento, hábitos, repeticiones y secuencias.</b
+      >
     </p>
   </div>
 </div>
@@ -22,130 +25,32 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
 <div class="section">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="description-box text-center">
-          <p class="description"><b>Ways we form a sentence</b></p>
-        </div>
-
-        <div class="example-box">
-          <div class="subject-box">
-            <h3>Subject</h3>
-            <ul>
-              <li><h5>I (Yo)</h5></li>
-              <li><h5>You (Tú)</h5></li>
-              <li><h5>We (Nosotros)</h5></li>
-              <li><h5>They (Ellos)</h5></li>
-              <li><h5 style="color: red;">--- 3th Person Singular ---></h5></li>
-              <li><h5 style="color: red;">He (El)</h5></li>
-              <li><h5 style="color: red;">She (Ella)</h5></li>
-              <li><h5 style="color: red;">It (Eso)</h5></li>
-            </ul>
-          </div>
-
-          <div class="affirmative-box">
-            <h3>Affirmative</h3>
-            <ul>
-              <li><h5>I speak English</h5></li>
-              <li><h5>You play football</h5></li>
-              <li><h5>We drink Coca Cola everyday</h5></li>
-              <li><h5>They make soup for the homeless</h5></li>
-              <li><hr style="border: solid 0.5px #EBEBED;"></li>
-              <li><h5>He <b style="color: red;">speaks</b> English</h5></li>
-              <li><h5>She <b style="color: red;">plays</b> Hockey</h5></li>
-              <li><h5>It <b style="color: red;">throws</b> water in the yard</h5></li>
-            </ul>
-          </div>
-          <div class="interrogative-box">
-            <h3>Interrogative</h3>
-            <ul>
-              <li><h5><b style="color: red;">Do</b> i speak English?</h5></li>
-              <li><h5><b style="color: red;">Do</b> you play football?</h5></li>
-              <li><h5><b style="color: red;">Do</b> We drink Coca Cola everyday?</h5></li>
-              <li><h5><b style="color: red;">Do</b> they make soup for the homeless?</h5></li>
-              <li><hr style="border: solid 0.5px #EBEBED;"></li>
-              <li><h5>He <b style="color: red;">Speaks</b> english?</h5></li>
-              <li><h5>She <b style="color: red;">Plays</b> Hockey?</h5></li>
-              <li><h5><b style="color: red;">Does</b> it <b style="color: red;">Throws</b> water in the yard?</h5></li>
-            </ul>
-          </div>
-          <div class="negative-box">
-            <h3>Negative</h3>
-            <ul>
-              <li><h5>I do not speak English</h5></li>
-              <li><h5>You do not play football</h5></li>
-              <li><h5>We do not drink Coca Cola everyday</h5></li>
-              <li><h5>They do not make soup for the homeless</h5></li>
-              <li><hr style="border: solid 0.5px #EBEBED;"></li>
-              <li><h5>He does not speak english</h5></li>
-              <li><h5>She does not play hockey</h5></li>
-              <li><h5>It does not throw water in the yard</h5></li>
-            </ul>
-          </div>
-        </div>
+      <div class="col-md-3">
+        <ul>
+          <li><hr style="border: solid 0.5px orangered;" /></li>
+          <li><h5>I do not speak English</h5></li>
+          <li><h5>You play football</h5></li>
+          <li><h5>We every day drink Coca Cola</h5></li>
+          <li><hr style="border: solid 0.5px orangered;" /></li>
+          <li>
+            <h5 style="color: orangered;">
+              Son algunos ejemplos, veamos como se construye la oración.
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </h5>
+          </li>
+        </ul>
       </div>
-    </div>
-    <br />
 
-    <div class="row">
-      <div class="col-md-3 subject-box"></div>
+      <div
+        class="col-md-6"
+        style="border-left: solid 0.5px #ebebed;"
+      >
+        {% include 'components/grammatical_rules.html' %} 
+        {% include 'components/affirmative.html' %}
+        {% include 'components/interrogative.html' %}
+      </div>
+      <div class="col-md-3" style="border-left: solid 0.5px #EBEBED;">
 
-      <div class="col-md-6">
-        {% include 'components/structure-box.html' %}
-
-        <div class="description-box">
-          <h3>Verb Infinitive</h3>
-          <p class="description">
-            <b
-              >In both English and Spanish, verbs indicate the action performed
-              by the subject, and although English actually has many verbs that
-              can sometimes also act as nouns or as a complement to other verbs,
-              this means that memorizing them is a bit complex, since depending
-              on the context, they can have one meaning or another.</b
-            >
-          </p>
-        </div>
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Infinitive</th>
-              <th scope="col">Present</th>
-              <th scope="col">Simple Past</th>
-              <th scope="col">Gerund</th>
-              <th scope="col">Spanish</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Be</td>
-              <td>Is|Am|Are</td>
-              <td>Was|Were</td>
-              <td>Being</td>
-              <td>Ser|Estar</td>
-            </tr>
-            <tr>
-              <td>Have</td>
-              <td>Has</td>
-              <td>Had</td>
-              <td>Having</td>
-              <td>Tener</td>
-            </tr>
-            <tr>
-              <td>Do</td>
-              <td>Do|Does</td>
-              <td>Did</td>
-              <td>Doing</td>
-              <td>Hacer</td>
-            </tr>
-            <tr>
-              <td>Say</td>
-              <td>Says</td>
-              <td>Said</td>
-              <td>Saying</td>
-              <td>Decir</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>

@@ -1,79 +1,92 @@
-body{
-    font-size: 13px;
-    color: #333;
+body {
+  font-size: 13px;
+  color: #333;
 }
 
 .title {
-    font-family: 'Galada', cursive;
-    font-size: 55px;
-    color: #FFF;
+  font-family: "Galada", cursive;
+  font-size: 55px;
+  color: #fff;
 }
 
-.subtitle{
-    text-align: center;
-    color: #FFF;
-    font-size: 23px;
+.orangered{
+    color: orangered;
 }
 
-.example-box{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    width: 100%;
-    border: solid 0.5px #EBEBED;
+.subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 23px;
 }
 
-.subject-box{
-    text-align: center;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    border-right: solid 0.5px #EBEBED;
+.example-box {
+  min-width: 768px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+  border: solid 0.5px #ebebed;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-.affirmative-box{
-    text-align: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    border-right: solid 0.5px #EBEBED;
+.subject-box {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  border-right: solid 0.5px #ebebed;
 }
 
-.interrogative-box{
-    text-align: center;
-    grid-column-start: 3;
-    grid-column-end: 4;
+.affirmative-box {
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  border-right: solid 0.5px #ebebed;
 }
 
-.negative-box{
-    text-align: center;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    border-left: solid 0.5px #EBEBED;
+.interrogative-box {
+  text-align: center;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
-.description{
-    font-size: 15px;
-    color: #000000;
-    font-weight: 500;
+.negative-box {
+  text-align: center;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  border-left: solid 0.5px #ebebed;
+}
+
+.description {
+  font-size: 15px;
+  color: #000000;
+  font-weight: 500;
 }
 .box-title {
-    text-align: center;
-    background-color: rosybrown;
+  text-align: center;
+  background-color: rosybrown;
 }
-
 
 .transparence {
-    background-color: rgb(0, 0, 0);
-    opacity: .5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
 }
 
-.text-center{
-    text-align: center;
+.text-center {
+  text-align: center;
 }
-.subject-box{
-    background-color: transparent;
+.subject-box {
+  background-color: transparent;
 }
-.description-box{
-    background-color: transparent;
+.description-box {
+  background-color: transparent;
 }
-.structure-box{
-    background-color: transparent;
+.structure-box {
+  border-radius: 10px;
+  border: solid 1px orangered;
+}
+
+@media only screen and (max-width: 767px) {
+  .example-box {
+    overflow-x: scroll;
+  }
 }
