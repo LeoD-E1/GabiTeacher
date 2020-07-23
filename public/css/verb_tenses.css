@@ -3,14 +3,18 @@ body {
   color: #333;
 }
 
+i {
+  font-size: 13px;
+}
+
 .title {
   font-family: "Galada", cursive;
   font-size: 55px;
   color: #fff;
 }
 
-.orangered{
-    color: orangered;
+.orangered {
+  color: orangered;
 }
 
 .subtitle {
