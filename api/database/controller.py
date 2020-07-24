@@ -4,7 +4,8 @@ from flask_pymongo import PyMongo
 from api.commons.env import env
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = env.get("MONGODB_URI") + "?retryWrites=false"
+#app.config["MONGO_URI"] = env.get("MONGODB_URI") + "?retryWrites=false"
+app.config["MONGO_URI"] = env.get("MONGODB_URI_LOCAL")
 mongo = PyMongo(app)
 
 

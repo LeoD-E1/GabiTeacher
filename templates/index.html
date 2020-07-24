@@ -11,13 +11,12 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
 {% endblock %} 
 
 {% block BgImageTitle %}
-<div class="col-md-12">
-    <h1 class="white-text">The Online School to learn English</h1>
-    <p class="lead white-text">Education to learn english dedicated to people<br> that want learn since cero </p>
-    <a class="main-button icon-button" href="{{url_for('get_started')}}">Get Started!</a>
+<div class="col-md-6">
+    <h1 class="white-text">Tu escuela de inglés online</h1>
+    <p class="lead white-text">Capacitacion en inglés para personas que quieran aprender desde los básicos</p>
+    <a class="main-button icon-button" href="{{url_for('get_started')}}">Comenzar!</a>
 </div>
 {% endblock %}
-
 
 <!-- /Home -->
 {% block content %}
@@ -26,14 +25,12 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
 
     <!-- container -->
     <div class="container">
-
         <!-- row -->
         <div class="row">
-
             <div class="col-md-6">
                 <div class="section-header">
-                    <h1>Welcome to GabiTeacher</h1>
-                    <p class="lead">Everything you need to know to improve your English is at your fingertips, from any device, whenever and wherever you want.
+                    <h1>Bienvenido a GabiTeacher</h1>
+                    <p class="lead">Todo lo que necesita saber para mejorar su inglés está a su alcance, desde cualquier dispositivo, cuando y donde quiera.
                     </p>
                 </div>
 
@@ -56,7 +53,6 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
                     </div>
                 </div>
                 <!-- /feature -->
-
             </div>
 
             <div class="col-md-6">
@@ -64,10 +60,8 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
                     <img src="../public/img/gabiteacher-port.jpg" alt="gabiteacher-port">
                 </div>
             </div>
-
         </div>
         <!-- row -->
-
     </div>
     <!-- container -->
 </div>
@@ -93,56 +87,22 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
             <!-- row -->
             <div class="row">
 
+                {% for doc in card %}
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="course">
+                            <a href="#" class="course-img">
+                                <img src="{{ doc['items'] }}" alt="">
+                                <i class="course-link-icon fa fa-link"></i>
+                            </a>
+                            <a class="course-title" href="#"> {{ doc['title'] }}</a>
+                
+                        </div>
+                    </div>
+                
+                {% endfor%}
                 <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course01.jpg">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Listening</a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
-
-                <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course02.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Vocabulary </a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
-
-                <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course03.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">writings</a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
-
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course04.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Grammar</a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
+                
             </div>
         </div>
         <!-- /courses -->
@@ -252,7 +212,7 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
         </div>
         <!-- /row -->
 
-        <hr class="section-hr">
+        
 
     </div>
     <!-- /container -->
