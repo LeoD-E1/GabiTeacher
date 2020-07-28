@@ -3,6 +3,7 @@ import json
 from api.routes.auth import auth
 from api.commons.env import env
 from api.database import controller
+import json
 
 
 def contact(req):
@@ -15,28 +16,14 @@ def favicon(req):
 
 def home(req):
 
-    # card = controller.mongo.db.learn.find_one({'title':'Verb Tenses'})
-    card = controller.mongo.db.learn.aggregate(
-        [
-            {
-                "$project": {
-                    "items": {
-                        "$filter": {
-                            "input": "$tenses",
-                            "as": "item",
-                            "cond": {"$eq": ["$$item.title", "Presente Simple"]},
-                        }
-                    }
-                }
-            }
-        ]
-    )
+    card = controller.mongo.db.learn.find({'title':'Verb Tenses'})
     for doc in card:
-        print(doc)
-    return render_template("index.html", card=card)
+        tenses = doc['tenses']
+
+    return render_template("index.html", card=card, tenses=tenses)
 
 
-def get_started(req):
+def get_started(req): 
     return render_template("get_started.html")
 
 

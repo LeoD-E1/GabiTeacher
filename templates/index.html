@@ -87,20 +87,17 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
             <!-- row -->
             <div class="row">
 
-                {% for doc in card %}
-                    
+                {% for doc2 in tenses %}
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <div class="course">
-                            <a href="#" class="course-img">
-                                <img src="{{ doc['items'] }}" alt="">
+                            <a href="{{ doc2['url'] }}" class="course-img">
+                                <img src="{{ url_for('static', filename = doc2['img']) }}">
                                 <i class="course-link-icon fa fa-link"></i>
                             </a>
-                            <a class="course-title" href="#"> {{ doc['title'] }}</a>
-                
+                            <a class="course-title" href="{{ doc2['url'] }}"> {{ doc2['title'] }}</a>
                         </div>
                     </div>
-                
-                {% endfor%}
+                {% endfor %}
                 <!-- single course -->
                 
             </div>
