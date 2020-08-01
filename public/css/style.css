@@ -568,14 +568,26 @@ textarea:focus {
 .course {
     margin-top: 20px;
     margin-bottom: 20px;
+    border: solid 0.5px #EBEBED;
+    border-radius: 5px;
+}
+
+.course:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .course .course-img {
     position: relative;
     display: block;
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     overflow: hidden;
+}
+
+.course .course-text{
+    padding: 7px;
+    text-align: center;
 }
 
 .course .course-img>img {
@@ -624,11 +636,6 @@ textarea:focus {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     opacity: 1;
-}
-
-.course .course-title {
-    display: block;
-    height: 42px;
 }
 
 .course .course-details {
