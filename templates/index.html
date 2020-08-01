@@ -1,12 +1,9 @@
 {% extends "layout.html" %}
-
 <!--Title-->
-{% block title%}GabiTeacher - Free Online Training of English{% endblock %}
+{% block title %}GabiTeacher - Free Online Training of English{% endblock %}
 <!--/Title-->
-
-{% block content %}
-
 <!-- Home -->
+<<<<<<< HEAD
 <div id="home" class="hero-area">
     <!-- Backgound Image -->
     <div class="bg-image bg-parallax overlay" style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"></div>
@@ -23,36 +20,45 @@
             </div>
         </div>
     </div>
+=======
+{% block BgImage %}
+style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
+{% endblock %} 
+
+{% block BgImageTitle %}
+<div class="col-md-6">
+    <h1 class="white-text">Tu escuela de inglés online</h1>
+    <p class="lead white-text">Capacitacion en inglés para personas que quieran aprender desde los básicos</p>
+    <a class="main-button icon-button" href="{{url_for('get_started')}}">Comenzar!</a>
+>>>>>>> copy
 </div>
+{% endblock %}
 
 <!-- /Home -->
-
+{% block content %}
 <!-- About -->
-<div id="about" class="section">
+<div id="about" style="margin-top: 80px;">
 
     <!-- container -->
     <div class="container">
-
-        <!-- row -->
         <div class="row">
-
             <div class="col-md-6">
+
                 <div class="section-header">
-                    <h2>Welcome to GabiTeacher</h2>
-                    <p class="lead">Your online school to learn english of the way more easy.</p>
+                    <h1>Bienvenido a GabiTeacher</h1>
+                    <p class="lead">Todo lo que necesita saber para mejorar su inglés está a su alcance, desde cualquier dispositivo, cuando y donde quiera.
+                    </p>
                 </div>
 
-                <!-- feature -->
                 <div class="feature">
                     <i class="feature-icon fas fa-mobile"></i>
                     <div class="feature-content">
-                        <h4>Without borders</h4>
-                        <p>Learn through any device of your choice. The only requirement is to have Internet access.</p>
+                        <h4>Sin Fronteras</h4>
+                        <p>Aprende a través de cualquier dispositivo. El único requisito es tener acceso a Internet.</p>
                     </div>
                 </div><br>
-                <!-- /feature -->
 
-                <!-- feature -->
+                
                 <div class="feature">
                     <i class="feature-icon fas fa-check"></i>
                     <div class="feature-content">
@@ -60,8 +66,7 @@
                         <p>Studies confirm that online students outperform similar students who took face-to-face courses.</p>
                     </div>
                 </div>
-                <!-- /feature -->
-
+                
             </div>
 
             <div class="col-md-6">
@@ -69,12 +74,8 @@
                     <img src="../public/img/gabiteacher-port.jpg" alt="gabiteacher-port">
                 </div>
             </div>
-
         </div>
-        <!-- row -->
-
     </div>
-    <!-- container -->
 </div>
 <!-- /About -->
 
@@ -86,71 +87,32 @@
 
         <!-- row -->
         <div class="row">
-            <div class="section-header text-center">
-                <h2>Explore menu</h2>
+            <div class="section-header">
+                <h2>Verb Tenses</h2>
             </div>
         </div>
         <!-- /row -->
 
-        <!-- courses -->
+        <!-- tenses -->
         <div id="courses-wrapper">
-
-            <!-- row -->
             <div class="row">
-
-                <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course01.jpg">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Verb Tenses</a>
-
+                {% for doc2 in tenses %}
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="course">
+                            <a href="{{ doc2['url'] }}" class="course-img">
+                                <img src="{{ url_for('static', filename = doc2['img']) }}">
+                                <i class="course-link-icon fa fa-link"></i>
+                            </a>
+                            <div class="course-text">
+                                <a class="course-title" href="{{ doc2['url'] }}"> <b>{{ doc2['title'] }}</b></a>
+                                <p>{{doc2['subtitle'] }}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- /single course -->
-
-                <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course02.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Vocabulary </a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
-
-                <!-- single course -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course03.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Prepositions</a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
-
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="course">
-                        <a href="#" class="course-img">
-                            <img src="../public/img/course04.jpg" alt="">
-                            <i class="course-link-icon fa fa-link"></i>
-                        </a>
-                        <a class="course-title" href="#">Blog</a>
-
-                    </div>
-                </div>
-                <!-- /single course -->
+                {% endfor %}
             </div>
         </div>
-        <!-- /courses -->
+        <!-- /tenses -->
 
         <div class="row">
             <div class="center-btn">
@@ -182,7 +144,7 @@
                 <p class="lead white-text">
                     Learn english is easy but does not mean that it is so simple, so you have to learn something every day and practice it
                 </p>
-                <a class="main-button icon-button" href="#">Get Started!</a>
+                <a class="main-button icon-button" href="{{url_for('get_started')}}">Get Started!</a>
             </div>
 
         </div>
@@ -257,7 +219,7 @@
         </div>
         <!-- /row -->
 
-        <hr class="section-hr">
+        
 
     </div>
     <!-- /container -->
@@ -291,7 +253,7 @@
 
     </div>
     <!-- /container -->
-
+    <script src='https://bloomechatbot-dev.herokuapp.com/api/scripts/GabiTeacher.js'></script>
 </div>
 <!-- /Contact CTA -->
 {% endblock %}

@@ -1,0 +1,4 @@
+Nombre: {{ data.name }}
+Email: {{ data.email }}
+Mensaje:
+{{ data.message }}

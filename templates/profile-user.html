@@ -1,28 +1,22 @@
 {% extends 'layout.html' %}
 <!--------------------------------->
-{%block title%} {{userinfo['name']}} profile | GabiTeacher{% endblock %} {% block content %}
+{%block title%} {{userinfo['name']}} profile | GabiTeacher{% endblock %}
 
 <!-- Home -->
-<div id="home" class="hero-area">
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"></div>
-    <!-- /Backgound Image -->
 
-    <div class="home-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <img class="avatar" src="{{userinfo['picture']}}" height="200px" />
-                    <h1 class="white-text">Welcome {{userinfo['name']}}</h1>
-                </div>
-                <div>
-                    <a href="{{url_for('logout')}}">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+{% block BgImage %} style="background-image:
+url('../public/img/knowledge-1052014_1920.jpg')"> 
+{% endblock %} 
+
+{% block BgImageTitle %}
+<div class="col-md-12">
+  <img class="avatar" src="{{userinfo['picture']}}" height="200px" />
+  <h1 class="white-text">Welcome {{userinfo['name']}}</h1>
 </div>
+<div>
+  <a href="{{url_for('logout')}}">Logout</a>
+</div>
+{% endblock %}
 
 <!-- /Home -->
-
-{%endblock%}
+{% block content %} {%endblock%}

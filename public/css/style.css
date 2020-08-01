@@ -97,10 +97,6 @@ blockquote:before {
     border-color: #EBEBEB;
 }
 
-.section-header {
-    margin-bottom: 40px;
-}
-
 
 /* --- Background Image --- */
 
@@ -111,6 +107,7 @@ blockquote:before {
     top: 0;
     bottom: 0;
     background-position: center;
+    background-size: cover;
     background-size: cover;
 }
 
@@ -128,6 +125,11 @@ blockquote:before {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
     background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
     opacity: 0.7;
+}
+
+.title {
+    text-align: center;
+    font-size: 45px;
 }
 
 
@@ -152,17 +154,9 @@ blockquote:before {
     color: #FF6700;
 }
 
-.main-button.icon-button:hover,
-.main-button.icon-button:focus {
-    padding-right: 45px;
-}
-
 .main-button.icon-button:after {
-    content: "\f061";
     font-family: FontAwesome;
     position: absolute;
-    width: 30px;
-    right: 15px;
     text-align: center;
     opacity: 0;
     -webkit-transition: 0.2s all;
@@ -373,7 +367,7 @@ textarea:focus {
 .navbar-toggle>span:after {
     height: 2px;
     width: 25px;
-    background-color: #374050;
+    background-color: #FF6700;
 }
 
 .navbar-toggle>span:before {
@@ -574,14 +568,26 @@ textarea:focus {
 .course {
     margin-top: 20px;
     margin-bottom: 20px;
+    border: solid 0.5px #EBEBED;
+    border-radius: 5px;
+}
+
+.course:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .course .course-img {
     position: relative;
     display: block;
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     overflow: hidden;
+}
+
+.course .course-text{
+    padding: 7px;
+    text-align: center;
 }
 
 .course .course-img>img {
@@ -630,11 +636,6 @@ textarea:focus {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     opacity: 1;
-}
-
-.course .course-title {
-    display: block;
-    height: 42px;
 }
 
 .course .course-details {
@@ -1263,7 +1264,7 @@ textarea:focus {
     .section-header h2 {
         font-size: 24px;
     }
-    /*-- Why us --*/
+    /*-- Why gabiteacher --*/
     #why-us .feature {
         margin-top: 40px;
     }
@@ -1344,59 +1345,4 @@ textarea:focus {
 }
 
 
-/*------------------------------------*\
-	Preloader
-\*------------------------------------*/
-
-#preloader {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #FFF;
-    z-index: 9999;
-}
-
-#preloader .preloader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-#preloader .preloader:after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #EBEBEB;
-    border-top: 1px solid #FF6700;
-    border-radius: 50%;
-    -webkit-animation: 1s preloader linear infinite;
-    animation: 1s preloader linear infinite;
-}
-
-@-webkit-keyframes preloader {
-    from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes preloader {
-    from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
+/*------simple present--------*/
