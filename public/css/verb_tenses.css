@@ -89,8 +89,3 @@ i {
   border: solid 1px orangered;
 }
 
-@media only screen and (max-width: 767px) {
-  .example-box {
-    overflow-x: scroll;
-  }
-}

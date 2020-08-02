@@ -15,13 +15,14 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
     <p class="subtitle">
       <b
         >Al hablar en presente, estamos hablando de algo que está sucediendo en
-        este momento, hábitos, repeticiones y secuencias.</b
+        este momento, como hábitos, repeticiones y secuencias.</b
       >
     </p>
   </div>
 </div>
 <div class="col-md-3"></div>
 {% endblock %} {% block content %}
+
 <div class="section">
   <div class="container">
     <div class="row">
@@ -46,14 +47,17 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         </ul>
       </div>
 
-      <div class="col-md-6" style="border-left: solid 0.5px #ebebed;">
-        {% include 'components/grammatical_rules.html' %} 
-        {% include'components/affirmative.html' %} 
-        {% include 'components/negative.html' %}
+      <div
+        class="col-md-7"
+        style="border-left: solid 0.5px #ebebed; padding: 30px; border-right: solid 0.5px #ebebed"
+      >
+        {% include 'components/grammatical_rules.html' %}
+        {% include 'components/affirmative.html' %} 
+        {% include 'components/negative.html' %} 
         {% include'components/interrogative.html' %}
       </div>
 
-      <div class="col-md-3" style="border-left: solid 0.5px #ebebed;">
+      <div class="col-md-2" >
         {% include 'components/meanings.html' %}
       </div>
     </div>

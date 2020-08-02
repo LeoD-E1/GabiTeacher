@@ -10,44 +10,11 @@
 </head>
 
 <body>
-
     <!-- Header -->
-    <header id="header" class="transparent-nav" {% block style %}{% endblock %}>
-        <div class="container">
-
-            <div class="navbar-header">
-                <!-- Logo -->
-                <div class="navbar-brand">
-                    <a href="{{ url_for('home') }}">
-                        <img src="../public/img/logo-blanco.png" height="45px">
-                    </a>
-                </div>
-                <!-- /Logo -->
-
-                <!-- Mobile toggle -->
-                <button class="navbar-toggle">
-					<span></span>
-					
-				</button>
-                <!-- /Mobile toggle -->
-            </div>
-
-            <!-- Navigation -->
-            <nav id="nav">
-                <ul class="main-menu nav navbar-nav navbar-right">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="#">Grammar</a></li>
-                    <!--<li><a href="blog.html">Menu</a></li>-->
-                    <li><a href="#">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
-                </ul>
-            </nav>
-            <!-- /Navigation -->
-        </div>
-    </header>
+    {% include 'components/header.html' %}
     <!-- /Header -->
 
+    <!-- Image -->
     <div id="home" class="hero-area">
         <!-- Backgound Image -->
         <div
@@ -55,7 +22,7 @@
             {% block BgImage %} {% endblock %}>
         </div>
             <!-- /Backgound Image -->
-
+    
             <div class="home-wrapper">
                 <div class="container">
                 <div class="row">
@@ -67,6 +34,7 @@
             </div>
         </div>
     </div>
+    <!-- /Image -->
 
     {% block content %} {% endblock %}
 
