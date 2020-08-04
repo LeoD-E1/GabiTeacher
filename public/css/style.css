@@ -649,7 +649,7 @@ textarea:focus {
 }
 
 .course .course-details .course-price.course-free {
-    color: green;
+    color: rgb(85, 98, 85);
 }
 
 .course .course-details .course-price.course-premium {
