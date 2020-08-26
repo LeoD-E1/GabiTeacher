@@ -11,42 +11,7 @@
 
 <body>
 
-    <!-- Header -->
-    <header id="header" class="transparent-nav" {% block style %}{% endblock %}>
-        <div class="container">
-
-            <div class="navbar-header">
-                <!-- Logo -->
-                <div class="navbar-brand">
-                    <a href="{{ url_for('home') }}">
-                        <img src="../public/img/logo-blanco.png" height="45px">
-                    </a>
-                </div>
-                <!-- /Logo -->
-
-                <!-- Mobile toggle -->
-                <button class="navbar-toggle">
-					<span></span>
-					
-				</button>
-                <!-- /Mobile toggle -->
-            </div>
-
-            <!-- Navigation -->
-            <nav id="nav">
-                <ul class="main-menu nav navbar-nav navbar-right">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="#">Grammar</a></li>
-                    <!--<li><a href="blog.html">Menu</a></li>-->
-                    <li><a href="#">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
-                </ul>
-            </nav>
-            <!-- /Navigation -->
-        </div>
-    </header>
-    <!-- /Header -->
+    {% include 'components/header.html' %}
 
     <div id="home" class="hero-area">
         <!-- Backgound Image -->
@@ -93,12 +58,11 @@
                 <!-- footer nav -->
                 <div class="col-md-6">
                     <ul class="main-menu nav navbar-nav navbar-right">
-                        <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="#">Books</a></li>
+                        <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                        <li><a href="#">Aprender</a></li>
                         <!--<li><a href="blog.html">Menu</a></li>-->
-                        <li><a href="#">About</a></li>
-                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
+                        <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+                        <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Registrarme | Ingresar</a>
                     </ul>
                 </div>
                 <!-- /footer nav -->
@@ -114,7 +78,7 @@
                     <ul class="footer-social">
                         <li><a href="https://www.facebook.com/gabiteacher27/" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="https://www.instagram.com/gabiteacher.27/" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li>
+                        <!-- <li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li> -->
                     </ul>
                 </div>
                 <!-- /social -->
@@ -125,7 +89,7 @@
                         Copyright &copy; 2019 -
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> GabiTeacher. All rights reserved
+                        </script> GabiTeacher. Todos los derechos reservados
                     </div>
                 </div>
                 <!-- /copyright -->
