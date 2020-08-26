@@ -1,1 +1,2 @@
-This is an application for learning english, it's named GabiTeacher project
+app para aprender ingles de manera facil dirigido a 
+aquellas personas que estan empezando por lo basico

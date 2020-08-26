@@ -2,26 +2,17 @@
 <html lang="en">
 
 <head>
-    {% block head %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link type='text/css' rel="stylesheet" href="../public/css/bootstrap.min.css" />
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="../public/fontawesome/css/all.css">
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="../public/css/style.css" /> {% endblock %}
-
+    <!----- Include the head component in /components/head.html------->
+    {% include 'components/head.html' %}
+    <!----------------------------------->
+    {% block css %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
 
     <!-- Header -->
-    <header id="header" class="transparent-nav">
+    <header id="header" class="transparent-nav" {% block style %}{% endblock %}>
         <div class="container">
 
             <div class="navbar-header">
@@ -45,18 +36,37 @@
             <nav id="nav">
                 <ul class="main-menu nav navbar-nav navbar-right">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Grammar</a></li>
                     <!--<li><a href="blog.html">Menu</a></li>-->
                     <li><a href="#">About</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <!--<li><a><i class="fas fa-search"></i></a></li>-->
-                    <li><a href="{{ url_for('login')}}">Log in</a>
+                    <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
                 </ul>
             </nav>
             <!-- /Navigation -->
         </div>
     </header>
     <!-- /Header -->
+
+    <div id="home" class="hero-area">
+        <!-- Backgound Image -->
+        <div
+            class="bg-image bg-parallax overlay"
+            {% block BgImage %} {% endblock %}>
+        </div>
+            <!-- /Backgound Image -->
+
+            <div class="home-wrapper">
+                <div class="container">
+                <div class="row">
+                    {% block BgImageTitle %}
+                    
+                    {% endblock %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {% block content %} {% endblock %}
 
@@ -73,7 +83,7 @@
                 <!-- footer logo -->
                 <div class="col-md-6">
                     <div class="footer-logo">
-                        <a href="index.html">
+                        <a href="{{url_for('home')}}">
                             <img src="../public/img/logo-negro.png" height="50px">
                         </a>
                     </div>
@@ -88,7 +98,7 @@
                         <!--<li><a href="blog.html">Menu</a></li>-->
                         <li><a href="#">About</a></li>
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a href="{{ url_for('login')}}">Log in</a>
+                        <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Sign in | Sign up</a>
                     </ul>
                 </div>
                 <!-- /footer nav -->
@@ -103,7 +113,7 @@
                 <div class="col-md-4 col-md-push-8">
                     <ul class="footer-social">
                         <li><a href="https://www.facebook.com/gabiteacher27/" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.instagram.com/gabiteacher.27/" class="instagram"><i class="fab fa-instagram"></i></a></li>
                         <li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
@@ -129,12 +139,6 @@
     </footer>
     <!-- /Footer -->
     {% endblock %}
-
-    <!-- preloader -->
-    <div id='preloader'>
-        <div class='preloader'></div>
-    </div>
-    <!-- /preloader -->
 
     <!-- jQuery Plugins -->
     <script type="text/javascript" src="../public/js/jquery.min.js"></script>
