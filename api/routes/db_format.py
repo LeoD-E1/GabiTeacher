@@ -32,7 +32,7 @@ learn = [
                 "title": "Frequency",
                 "subtitle": "Son adverbios que se utilizan para expresar cuantas veces...",
                 "img": "course01.jpg",
-                "url": "/adverbs_frequency",
+                "url": "/adverbs_frequency"
             }
         ],
         "subtitle": "Los Adverbios nos sirven para expresar....",
