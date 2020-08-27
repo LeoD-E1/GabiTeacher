@@ -15,7 +15,7 @@ def favicon(req):
 
 
 def home(req):
-    
+    tenses = []
     card = controller.mongo.db.Learn.find({'title':'Verb Tenses'})
     for doc in card:
         tenses = doc['tenses']
