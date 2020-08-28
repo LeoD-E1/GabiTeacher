@@ -23,7 +23,6 @@ define_routes(app)
 app.secret_key = env.get("SECRET_KEY")
 app.debug = True
 
-
 @app.errorhandler(Exception)
 def handle_auth_error(ex):
     response = jsonify(message=str(ex))

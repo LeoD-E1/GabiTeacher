@@ -3,21 +3,30 @@
 {% block title %}GabiTeacher - Free Online Training of English{% endblock %}
 <!--/Title-->
 <!-- Home -->
-{% block BgImage %}
-style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
-{% endblock %} 
-
-{% block BgImageTitle %}
+{% block BgImage %} style="background-image:
+url('../public/img/knowledge-1052014_1920.jpg')" {% endblock %} {% block
+BgImageTitle %}
 <div class="col-md-6">
+<<<<<<< HEAD
     <h1 class="white-text">Tu escuela de inglés online</h1>
     <p class="lead white-text">Capacitacion de inglés para personas que quieren aprender desde los básicos</p>
     <a class="main-button icon-button" href="{{url_for('get_started')}}">Comenzar!</a>
+=======
+  <h1 class="white-text">Tu escuela de inglés online</h1>
+  <p class="lead white-text">
+    Capacitacion de inglés para personas que quieran aprender desde los básicos
+  </p>
+  <a class="main-button icon-button" href="{{url_for('get_started')}}"
+    >¡Comenzar!</a
+  >
+>>>>>>> copy
 </div>
 {% endblock %}
 
 <!-- /Home -->
 {% block content %}
 <!-- About -->
+<<<<<<< HEAD
 <div id="about" style="margin-top: 80px;">
 
     <!-- container -->
@@ -49,96 +58,132 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
                 </div>
                 
             </div>
-
-            <div class="col-md-6">
-                <div class="about-img">
-                    <img src="../public/img/gabiteacher-port.jpg" alt="gabiteacher-port">
-                </div>
-            </div>
+=======
+<div id="about" style="margin-top: 80px">
+  <!-- container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="section-header">
+          <h1>Bienvenido a GabiTeacher</h1>
+          <p class="lead">
+            Todo lo que necesita saber para mejorar su inglés está a su alcance,
+            desde cualquier dispositivo, cuando y donde quiera.
+          </p>
         </div>
+>>>>>>> copy
+
+        <div class="feature">
+          <i class="feature-icon fas fa-mobile"></i>
+          <div class="feature-content">
+            <h4>Sin Fronteras</h4>
+            <p>
+              Aprende a través de cualquier dispositivo. El único requisito es
+              tener acceso a Internet.
+            </p>
+          </div>
+        </div>
+        <br />
+
+        <div class="feature">
+          <i class="feature-icon fas fa-check"></i>
+          <div class="feature-content">
+            <h4>Eficacia</h4>
+            <p>
+              Estudios confirman que los estudiantes online superan a los
+              estudiantes que tomaron cursos presenciales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="about-img">
+          <img
+            src="../public/img/gabiteacher-port.jpg"
+            alt="gabiteacher-port"
+          />
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- /About -->
 
 <!-- Courses -->
 <div id="courses" class="section">
-
-    <!-- container -->
-    <div class="container">
-
-        <!-- row -->
-        <div class="row">
-            <div class="section-header">
-                <h2>Verb Tenses</h2>
-            </div>
-        </div>
-        <!-- /row -->
-
-        <!-- tenses -->
-        <div id="courses-wrapper">
-            <div class="row">
-                {% for doc2 in tenses %}
-                    <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="course">
-                            <a href="{{ doc2['url'] }}" class="course-img">
-                                <img src="{{ url_for('static', filename = doc2['img']) }}">
-                                <i class="course-link-icon fa fa-link"></i>
-                            </a>
-                            <div class="course-text">
-                                <a class="course-title" href="{{ doc2['url'] }}"> <b>{{ doc2['title'] }}</b></a>
-                                <p>{{doc2['subtitle'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- /tenses -->
-
-        <div class="row">
-            <div class="center-btn">
-                <a class="main-button icon-button" href="#">More</a>
-            </div>
-        </div>
-
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="section-header" style="text-align:center; border: solid 0.5px #ebebed">
+        <h2>Verb Tenses</h2>
+      </div>
     </div>
-    <!-- container -->
+    <!-- /row -->
 
+    <!-- tenses -->
+    <div id="courses-wrapper">
+      <div class="row" id="tenses-gallery">
+        {% for doc2 in tenses %}
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="course">
+            <a href="{{ doc2['url'] }}" class="course-img">
+              <img src="{{ url_for('static', filename = doc2['img']) }}" />
+              <i class="course-link-icon fa fa-link"></i>
+            </a>
+            <div class="course-text">
+              <a class="course-title" href="{{ doc2['url'] }}">
+                <b>{{ doc2['title'] }}</b></a
+              >
+              <p>{{doc2['subtitle'] }}</p>
+              
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <!-- /tenses -->
+  </div>
+  <!-- container -->
 </div>
 <!-- /Courses -->
 
 <!-- Call To Action -->
 <div id="cta" class="section">
+  <!-- Backgound Image -->
+  <div
+    class="bg-image bg-parallax overlay"
+    style="background-image: url(../public/img/books-1204029_1920.jpg)"
+  ></div>
+  <!-- /Backgound Image -->
 
-    <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(../public/img/books-1204029_1920.jpg)"></div>
-    <!-- /Backgound Image -->
-
-    <!-- container -->
-    <div class="container">
-
-        <!-- row -->
-        <div class="row">
-
-            <div class="col-md-6">
-                <h2 class="white-text">We want you to be the best in English with our help</h2>
-                <p class="lead white-text">
-                    Learn english is easy but does not mean that it is so simple, so you have to learn something every day and practice it
-                </p>
-                <a class="main-button icon-button" href="{{url_for('get_started')}}">Get Started!</a>
-            </div>
-
-        </div>
-        <!-- /row -->
-
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="white-text">Queremos ayudarte a ser mejor en ingles</h2>
+        <p class="lead white-text">
+          Aprender inglés es fácil pero no quiere decir que sea tan sencillo,
+          tenes que aprender algo todos los días y practicarlo constantemente.
+        </p>
+        <a class="main-button icon-button" href="{{url_for('get_started')}}"
+          >¡Empezar!</a
+        >
+      </div>
     </div>
-    <!-- /container -->
-
+    <!-- /row -->
+  </div>
+  <!-- /container -->
 </div>
 <!-- /Call To Action -->
 
 <!-- Why us -->
 <div id="why-us" class="section">
+<<<<<<< HEAD
 
     <!-- container -->
     <div class="container">
@@ -200,11 +245,78 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
         <!-- /row -->
     </div>
     <!-- /container -->
+=======
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="section-header text-center">
+        <h2>¿Por que GabiTeacher?</h2>
+      </div>
+      <!-- feature -->
+      <div class="col-md-3">
+        <div class="feature">
+          <i class="feature-icon fas fa-mobile"></i>
+          <div class="feature-content">
+            <h4>Sin Fronteras</h4>
+            <p>
+              Aprende desde cualquier dispositivo, el unico requerimiento es
+              tener acceso a internet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /feature -->
+      <!-- feature -->
+      <div class="col-md-3">
+        <div class="feature">
+          <i class="feature-icon fas fa-check"></i>
+          <div class="feature-content">
+            <h4>Eficacia</h4>
+            <p>
+              Estudios confirman que los estudiantes online superan a los
+              estudiantes que tomaron cursos presenciales.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /feature -->
+      <!-- feature -->
+      <div class="col-md-3">
+        <div class="feature">
+          <i class="feature-icon fa fa-comments"></i>
+          <div class="feature-content">
+            <h4>Comunidad</h4>
+            <p>Unite a la generacion de personas que dominan el ingles.</p>
+          </div>
+        </div>
+      </div>
+      <!-- /feature -->
+      <!-- feature -->
+      <div class="col-md-3">
+        <div class="feature">
+          <i class="feature-icon fas fa-book"></i>
+          <div class="feature-content">
+            <h4>Aprende Libremente</h4>
+            <p>
+              Aprende a tu propio ritmo, lee y mira los videos cuantas veces
+              necesites y bajo tus propios terminos
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- /feature -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+>>>>>>> copy
 </div>
 <!-- /Why us -->
 
 <!-- Contact CTA -->
 <div id="contact-cta" class="section">
+<<<<<<< HEAD
     <!-- Backgound Image -->
     <div class="bg-image bg-parallax overlay" style="background-image:url('../public/img/cta2-background.jpg')"></div>
     <!-- Backgound Image -->
@@ -224,9 +336,33 @@ style="background-image: url('../public/img/knowledge-1052014_1920.jpg')"
         </div>
         <!-- /row -->
 
+=======
+  <!-- Backgound Image -->
+  <div
+    class="bg-image bg-parallax overlay"
+    style="background-image: url('../public/img/cta2-background.jpg')"
+  ></div>
+  <!-- Backgound Image -->
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2 class="white-text">Contactanos</h2>
+        <p class="lead white-text">
+          ¿Tenes algo para contarnos, alguna pregunta, alguna sugerencia para
+          mejorar el Gabiteacher? Hacenoslo saber, todo es Bienvenido!!
+        </p>
+        <a class="main-button icon-button" href="{{url_for('contact')}}"
+          >Contactar</a
+        >
+      </div>
+>>>>>>> copy
     </div>
-    <!-- /container -->
-    <script src='https://bloomechatbot-dev.herokuapp.com/api/scripts/GabiTeacher.js'></script>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+  <!-- <script src='https://bloomechatbot-dev.herokuapp.com/api/scripts/GabiTeacher.js'></script> -->
 </div>
 <!-- /Contact CTA -->
 {% endblock %}

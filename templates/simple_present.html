@@ -2,7 +2,11 @@
 <!------------------->
 {% block css%}
 <link rel="stylesheet" type="text/css" href="../public/css/verb_tenses.css" />
-{% endblock %} {% block BgImage %}
+{% endblock %}
+<!---->
+{% block title %} Presente Simple {% endblock %}
+<!---->
+{% block BgImage %}
 style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
 {% block BgImageTitle %}
 
@@ -14,8 +18,13 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
   <div class="col-md-12">
     <p class="subtitle">
       <b
+<<<<<<< HEAD
         >Al hablar en presente, estamos hablando de algo cosas que suceden
         habitualmente, como hábitos, repeticiones, rutinas y secuencias.</b
+=======
+        >Al hablar en presente, estamos hablando de algo sucede cotidianamente,
+        como una rutina, hábitos o repeticiones.</b
+>>>>>>> copy
       >
     </p>
   </div>
@@ -29,17 +38,15 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
       <div class="col-md-3">
         <ul>
           <li>
-            <h4 style="color: orangered;">
-              Por ejemplo
-            </h4>
+            <h4 style="color: orangered">Por ejemplo</h4>
           </li>
-          <li><hr style="border: solid 0.5px orangered;" /></li>
+          <li><hr style="border: solid 0.5px orangered" /></li>
           <li><h5>I do not speak English</h5></li>
           <li><h5>You play football</h5></li>
-          <li><h5>We every day drink Coca Cola</h5></li>
-          <li><hr style="border: solid 0.5px orangered;" /></li>
+          <li><h5>We every day drink Manaos</h5></li>
+          <li><hr style="border: solid 0.5px orangered" /></li>
           <li>
-            <h4 style="color: orangered;">
+            <h4 style="color: orangered">
               Veamos como se construye la oración.
               <i class="fas fa-long-arrow-alt-right"></i>
             </h4>
@@ -47,6 +54,7 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         </ul>
       </div>
 
+<<<<<<< HEAD
       <div
         class="col-md-7"
         style="
@@ -58,6 +66,16 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         <!---->
         {% include 'components/grammatical_rules.html' %}
         <!---->
+=======
+      <div class="col-md-6 tense-content">
+        <!---->
+        {% include 'components/grammatical_rules.html' %}
+        <!---->
+        <div style="border-bottom: solid 1px #ebebed;">
+          <h4 class="orangered">Structure <i>(Estructura)</i></h4>
+        </div>
+        <!---->
+>>>>>>> copy
         {% include 'components/affirmative.html' %}
         <!---->
         {% include 'components/negative.html' %}
@@ -68,7 +86,11 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         <!---->
       </div>
 
+<<<<<<< HEAD
       <div class="col-md-2">
+=======
+      <div class="col-md-3" style="border-left: solid 0.5px #ebebed">
+>>>>>>> copy
         {% include 'components/meanings.html' %}
       </div>
     </div>
