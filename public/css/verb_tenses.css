@@ -7,9 +7,21 @@ i {
   font-size: 13px;
 }
 
+.tense-content{
+  border-left: solid 0.5px #EBEBED;
+  border-right: solid 0.5px #EBEBED;
+}
+
 .title {
   font-family: "Galada", cursive;
   font-size: 55px;
+  color: #fff;
+}
+
+.link-to-tense{
+  text-decoration:none;
+  padding: 20px;
+  background-color: blue;
   color: #fff;
 }
 

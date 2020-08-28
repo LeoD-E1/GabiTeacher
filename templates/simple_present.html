@@ -48,11 +48,17 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         </ul>
       </div>
 
-      <div class="col-md-6" style="border-left: solid 0.5px #ebebed">
-        {% include 'components/grammatical_rules.html' %} {%
-        include'components/affirmative.html' %} {% include
-        'components/negative.html' %} {% include'components/interrogative.html'
-        %}
+      <div class="col-md-6 tense-content">
+        {% include 'components/grammatical_rules.html' %}
+        <!---->
+        {% include 'components/affirmative.html' %}
+        <!---->
+        {% include 'components/negative.html' %}
+        <!---->
+        {% include 'components/interrogative.html' %}
+        <!---->
+        {% include 'components/uses.html' %}
+        <!---->
       </div>
 
       <div class="col-md-3" style="border-left: solid 0.5px #ebebed">
