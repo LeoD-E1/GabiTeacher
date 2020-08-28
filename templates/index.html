@@ -76,7 +76,7 @@ BgImageTitle %}
   <div class="container">
     <!-- row -->
     <div class="row">
-      <div class="section-header">
+      <div class="section-header" style="text-align:center; border: solid 0.5px #ebebed">
         <h2>Verb Tenses</h2>
       </div>
     </div>
@@ -84,7 +84,7 @@ BgImageTitle %}
 
     <!-- tenses -->
     <div id="courses-wrapper">
-      <div class="row">
+      <div class="row" id="tenses-gallery">
         {% for doc2 in tenses %}
         <div class="col-md-3 col-sm-6 col-xs-6">
           <div class="course">
@@ -102,6 +102,7 @@ BgImageTitle %}
           </div>
         </div>
         {% endfor %}
+
       </div>
     </div>
     <!-- /tenses -->
