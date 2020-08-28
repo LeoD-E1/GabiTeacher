@@ -99,6 +99,7 @@ i {
 .structure-box {
   border-radius: 10px;
   border: solid 1px orangered;
+  text-align: center;
 }
 
 @media only screen and (max-width: 767px) {
