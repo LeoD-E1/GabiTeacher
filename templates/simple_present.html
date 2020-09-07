@@ -31,22 +31,7 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <ul>
-          <li>
-            <h4 style="color: orangered">Por ejemplo</h4>
-          </li>
-          <li><hr style="border: solid 0.5px orangered" /></li>
-          <li><h5>I do not speak English</h5></li>
-          <li><h5>You play football</h5></li>
-          <li><h5>We every day drink Manaos</h5></li>
-          <li><hr style="border: solid 0.5px orangered" /></li>
-          <li>
-            <h4 style="color: orangered">
-              Veamos como se construye la oración.
-              <i class="fas fa-long-arrow-alt-right"></i>
-            </h4>
-          </li>
-        </ul>
+        {% include 'components/simple_present/examples_box.html' %}
       </div>
 
       <div class="col-md-6 tense-content">
