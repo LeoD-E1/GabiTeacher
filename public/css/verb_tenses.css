@@ -7,8 +7,18 @@ p{
   font-size: 17px;
 }
 
+.div-title{
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-top: solid 1px orangered;
+}
+
+.complement-container{
+  margin-bottom: 40px;  
+}
+
 i {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .tense-content {
