@@ -36,74 +36,11 @@
     <!-- /Image -->
 
     {% block content %} {% endblock %}
-
-    <!--Footer-->
+    <!---->
     {% block footer %}
-    <footer id="footer" class="section" style="background-color: #ffffff;">
-
-        <!-- container -->
-        <div class="container">
-
-            <!-- row -->
-            <div class="row">
-
-                <!-- footer logo -->
-                <div class="col-md-6">
-                    <div class="footer-logo">
-                        <a href="{{url_for('home')}}">
-                            <img src="../public/img/logo-negro.png" height="50px">
-                        </a>
-                    </div>
-                </div>
-                <!-- footer logo -->
-
-                <!-- footer nav -->
-                <div class="col-md-6">
-                    <ul class="main-menu nav navbar-nav navbar-right">
-                        <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                        <li><a href="#">Aprender</a></li>
-                        <!--<li><a href="blog.html">Menu</a></li>-->
-                        <li><a href="{{ url_for('contact') }}">Contacto</a></li>
-                        <li><a href="{{ url_for('login')}}"><i class="fas fa-user"></i> &nbsp;&nbsp; Registrarme | Ingresar</a>
-                    </ul>
-                </div>
-                <!-- /footer nav -->
-
-            </div>
-            <!-- /row -->
-
-            <!-- row -->
-            <div id="bottom-footer" class="row">
-
-                <!-- social -->
-                <div class="col-md-4 col-md-push-8">
-                    <ul class="footer-social">
-                        <li><a href="https://www.facebook.com/gabiteacher27/" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://www.instagram.com/gabiteacher.27/" class="instagram"><i class="fab fa-instagram"></i></a></li>
-                        <!-- <li><a href="#" class="youtube"><i class="fab fa-youtube"></i></a></li> -->
-                    </ul>
-                </div>
-                <!-- /social -->
-
-                <!-- copyright -->
-                <div class="col-md-8 col-md-pull-4">
-                    <div class="copyright">
-                        Copyright &copy; 2019 -
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script> GabiTeacher. Todos los derechos reservados
-                    </div>
-                </div>
-                <!-- /copyright -->
-
-            </div>
-            <!-- row -->
-
-        </div>
-        <!-- /container -->
-
-    </footer>
-    <!-- /Footer -->
+    <!---->
+    {% include 'components/footer.html' %}
+    <!---->
     {% endblock %}
 
     <!-- jQuery Plugins -->
