@@ -1,67 +1,62 @@
-{% extends 'layout.html' %}
-<!------------------->
-{% block css%}
-<link rel="stylesheet" type="text/css" href="../public/css/verb_tenses.css" />
+{% extends 'verb_tenses_structure.html' %}
+<!---->
+{% block title %}Presente Simple{% endblock%}
+
+<!---->
+{% block CoverImageLink %}
+    style="background-image:url('../public/img/simple-present.jpg');"
 {% endblock %}
 <!---->
-{% block title %} Presente Simple {% endblock %}
-<!---->
-{% block BgImage %}
-style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
 
-<!---->
-{% block BgImageTitle %}
-<div class="col-md-3"></div>
-<div class="col-md-6">
-  <h1 class="title">Presente Simple</h1>
-  <br /><br />
-
-  <div class="col-md-12">
-    <p class="subtitle">
-      <b
-        >Al hablar en presente, estamos hablando de algo sucede cotidianamente,
-        como una rutina, hábitos o repeticiones.</b
-      >
-    </p>
-  </div>
-</div>
-<div class="col-md-3"></div>
-{% endblock %} 
+<!--titulo de tiempo verbal-->
+{% block VerbTenseTitle %}Presente Simple{% endblock %}
 <!---->
 
-{% block content %}
+<!--Descripcion del tiempo verbal -->
+{% block DescriptionTense %}
+Al hablar en presente, estamos hablando de algo sucede cotidianamente,
+como una rutina, hábitos o repeticiones.
+{% endblock %}
+<!---->
 
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <!---->
-        {% include 'components/simple_present/examples_box.html' %}
-        <!---->
-        {% include 'components/simple_present/meanings.html' %}
-        <!---->
-      </div>
+<!--Examples del Tiempo Verbal -->
+{% block ExamplesVerbTense %}
+    {% include 'components/simple_present/examples_box.html' %} 
+{% endblock %}
+<!---->
 
-      <div class="col-md-9 tense-content">
-        <!---->
-        {% include 'components/simple_present/grammatical_rules.html' %}
-        <!---->
-        <div class="div-title" >
-          <h2 class="orangered">Structure <i>(Estructura)</i></h2>
-        </div>
-        <!---->
-        {% include 'components/simple_present/affirmative.html' %}
-        <!---->
-        {% include 'components/simple_present/negative.html' %}
-        <!---->
-        {% include 'components/simple_present/interrogative.html' %}
-        <!---->
-        {% include 'components/simple_present/uses.html' %}
-        <!---->
-      </div>
+<!--Meanings del tiempo verbal-->
+{% block MeaningsVerbTense %}
+    {% include 'components/simple_present/meanings.html' %}
+{% endblock %}
+<!---->
 
-      
-    </div>
-  </div>
-</div>
-{% endblock%}
+<!--Reglas gramaticales del tiempo verbal -->
+{% block GramaticalRulesVerbTense %}
+    {% include 'components/simple_present/grammatical_rules.html' %}
+{% endblock %}
+<!---->
+
+<!--Forma afirmativa del tiempo verbal -->
+{% block AffirmativeVerbTense %}
+    {% include 'components/simple_present/affirmative.html' %}
+{% endblock %}
+<!---->
+
+<!--Forma Negativa del tiempo Verbal -->
+{% block NegativeVerbTense %}
+    {% include 'components/simple_present/negative.html' %}
+{% endblock %}
+<!---->
+
+<!--Forma Interrogativa del tiempo Verbal -->
+{% block InterrogativeVerbTense %}
+    {% include 'components/simple_present/interrogative.html' %}
+{% endblock %}
+<!---->
+
+<!--Usos del tiempo Verbal -->
+{% block UsesVerbTense %}
+    {% include 'components/simple_present/uses.html' %}
+{% endblock %}
+<!---->
