@@ -34,6 +34,9 @@ def grammar(req):
 def simple_present(req):
     return render_template("simple_present.html")
 
+def simple_present_2(req):
+    return render_template("simple_present_2.html")
+
 
 @auth
 def dashboard(req):
