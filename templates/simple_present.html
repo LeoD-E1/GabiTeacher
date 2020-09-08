@@ -32,11 +32,13 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
     <div class="row">
       <div class="col-md-3">
         <!---->
-        {% include 'components/simple_present/examples_box.html' %}
+        {% include 'components/simple_present/examples_box.html' %} <br/>
+        <!---->
+        {% include 'components/simple_present/meanings.html' %}
         <!---->
       </div>
 
-      <div class="col-md-6 tense-content">
+      <div class="col-md-9 tense-content">
         <!---->
         {% include 'components/simple_present/grammatical_rules.html' %}
         <!---->
@@ -54,9 +56,7 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
         <!---->
       </div>
 
-      <div class="col-md-3" style="border-left: solid 0.5px #ebebed">
-        {% include 'components/simple_present/meanings.html' %}
-      </div>
+      
     </div>
   </div>
 </div>

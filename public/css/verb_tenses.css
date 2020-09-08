@@ -3,13 +3,17 @@ body {
   color: #333;
 }
 
+p{
+  font-size: 17px;
+}
+
 i {
   font-size: 13px;
 }
 
-.tense-content{
-  border-left: solid 0.5px #EBEBED;
-  border-right: solid 0.5px #EBEBED;
+.tense-content {
+  border-left: solid 0.5px #ebebed;
+  border-right: solid 0.5px #ebebed;
 }
 
 .title {
@@ -18,8 +22,8 @@ i {
   color: #fff;
 }
 
-.link-to-tense{
-  text-decoration:none;
+.link-to-tense {
+  text-decoration: none;
   padding: 20px;
   background-color: blue;
   color: #fff;
