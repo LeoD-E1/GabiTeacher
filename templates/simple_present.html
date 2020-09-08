@@ -31,29 +31,31 @@ style="background-image:url('../public/img/simple-present.jpg');" {% endblock %}
   <div class="container">
     <div class="row">
       <div class="col-md-3">
+        <!---->
         {% include 'components/simple_present/examples_box.html' %}
+        <!---->
       </div>
 
       <div class="col-md-6 tense-content">
         <!---->
-        {% include 'components/grammatical_rules.html' %}
+        {% include 'components/simple_present/grammatical_rules.html' %}
         <!---->
-        <div style="border-bottom: solid 1px #ebebed;">
+        <div style="border-bottom: solid 1px #ebebed">
           <h4 class="orangered">Structure <i>(Estructura)</i></h4>
         </div>
         <!---->
-        {% include 'components/affirmative.html' %}
+        {% include 'components/simple_present/affirmative.html' %}
         <!---->
-        {% include 'components/negative.html' %}
+        {% include 'components/simple_present/negative.html' %}
         <!---->
-        {% include 'components/interrogative.html' %}
+        {% include 'components/simple_present/interrogative.html' %}
         <!---->
-        {% include 'components/uses.html' %}
+        {% include 'components/simple_present/uses.html' %}
         <!---->
       </div>
 
       <div class="col-md-3" style="border-left: solid 0.5px #ebebed">
-        {% include 'components/meanings.html' %}
+        {% include 'components/simple_present/meanings.html' %}
       </div>
     </div>
   </div>
