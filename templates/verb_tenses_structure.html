@@ -2,9 +2,86 @@
 <html lang="en">
 <head>
     {% include 'components/head.html' %}
+    <link rel="stylesheet" type="text/css" href="../public/css/verb_tenses.css" />
     <title>{% block title %}{% endblock %}</title>
+    {% block css%}{% endblock %}
 </head>
 <body>
+    {% include 'components/header.html' %}
     
+    <!-- Image -->
+    <div id="home" class="hero-area">
+        <!-- Backgound Image -->
+        <div
+            class="bg-image bg-parallax overlay"
+            {% block CoverImageLink %} {% endblock %}>
+        </div>
+            <!-- /Backgound Image -->
+    
+            <div class="home-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <!--Titulo del tiempo verbal correspondiente-->
+                            <h1 class="title">{% block VerbTenseTitle %}{% endblock %}</h1>
+                            <br /><br />
+
+                            <div class="col-md-12">
+                                <p class="subtitle">
+                                <b
+                                    >{% block DescriptionTense %}{% endblock %}</b
+                                >
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Image -->
+    
+    <!---->
+    <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <!---->
+              {% block ExamplesVerbTense %}{% endblock %}
+              <!---->
+              {% block MeaningsVerbTense %}{% endblock %}
+              <!---->
+            </div>
+            
+            <!--Informacion del tiempo verbal-->
+            <div class="col-md-9 tense-content">
+
+              <!--Reglas gramaticales del verbo que se esta escribiendo-->
+              {% block GramaticalRulesVerbTense %}{% endblock %}
+              <!---->
+              
+              <div class="div-title" >
+                <h2 class="orangered">Structure <i>(Estructura)</i></h2>
+              </div>
+
+              <!--Forma afirmativa del tiempo verbal -->
+              {% block AffirmativeVerbTense %}{% endblock %}
+
+              <!--Forma Negativa del tiempo verbal -->
+              {% block NegativeVerbTense %}{% endblock %}
+
+              <!--Forma Interrigativa del tiempo verbal -->
+              {% block InterrogativeVerbTense %}{% endblock %}
+
+              <!--Usos del tiempo verbal -->
+              {% block UsesVerbTense %}{% endblock %}
+              <!---->
+            </div>
+      
+          </div>
+        </div>
+    </div>
 </body>
 </html>
