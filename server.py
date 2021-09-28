@@ -1,5 +1,5 @@
-"""GabiTeacher App
-"""
+"""GabiTeacher App"""
+
 from flask import Flask, jsonify, redirect
 from flask import session, url_for
 
@@ -61,6 +61,10 @@ def callback_handling():
 @app.route("/login")
 def login():
     return auth0.authorize_redirect(redirect_uri=callback_url, audience=audience)
+
+# @app.route("/login2")
+# def login2():
+    
 
 
 @app.route("/logout")
